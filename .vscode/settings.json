@@ -1,0 +1,12 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "eslint.validate": ["javascript", "javascriptreact", { "autoFix": true, "language": "react" }],
+  "eslint.autoFixOnSave": true,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "prettier.disableLanguages": ["react", "js"],
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "editor.formatOnSave": true
+}
