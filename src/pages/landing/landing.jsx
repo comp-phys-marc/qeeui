@@ -49,7 +49,7 @@ class LandingPage extends React.Component {
   render() {
     const { classes, ...rest } = this.props
     const { width } = this.state
-    const isMobile = width <= 900
+    let isMobile = width <= 900
     return (
       <div>
         <Header
@@ -85,7 +85,7 @@ class LandingPage extends React.Component {
             <div className={classes.container}>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
-                  <h1 className={classes.title}>A powerful research tool.</h1>
+                  <h1 className={classes.title}>Take quantum research to the next level.</h1>
                   <h4>
                     Harness Google's Cloud infrastructure and AI to emulate, analyze and interpret qunatum computing
                     experiments.
@@ -100,7 +100,7 @@ class LandingPage extends React.Component {
           <div className={classes.container}>
             <ProductSection />
             <ResearchSection />
-            <ExampleSection />
+            <ExampleSection isMobile={isMobile} />
             <WorkSection />
           </div>
         </div>

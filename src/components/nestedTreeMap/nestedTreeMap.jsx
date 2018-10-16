@@ -30,10 +30,10 @@ class NestedTreeMap extends React.Component {
       onLeafMouseOver: x => this.setState({ hoveredNode: x }),
       onLeafMouseOut: () => this.setState({ hoveredNode: false }),
       onLeafClick: () => this.setState({ treemapData: this.state.treemapData }),
-      height: 400,
+      height: 250,
       mode: this.state.useCirclePacking ? 'circlePack' : 'squarify',
       getLabel: x => x.name,
-      width: 450
+      width: 300
     }
     return (
       <div className="dynamic-treemap-example">

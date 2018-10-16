@@ -35,8 +35,8 @@ function Footer({ ...props }) {
         </div>
         <div className={classes.right}>
           &copy; {1900 + new Date().getYear()} by{' '}
-          <a href="https://www.creative-tim.com" className={aClasses} target="_blank">
-            Marcus Edwards
+          <a href="https://www.sigmadev.ca" className={aClasses} target="_blank">
+            SIGMA Development
           </a>{' '}
         </div>
       </div>

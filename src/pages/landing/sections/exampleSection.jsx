@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -114,8 +115,21 @@ const resourcesDataSeries = {
 }
 
 class ProductSection extends React.Component {
+  static propTypes = {
+    isMobile: PropTypes.bool
+  }
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isMobile: this.props.isMobile
+    }
+  }
   render() {
     const { classes } = this.props
+    const { isMobile } = this.state
+
     return (
       <div classname="classes.section">
         <GridContainer justify="center">
@@ -125,14 +139,7 @@ class ProductSection extends React.Component {
           </GridItem>
         </GridContainer>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <b className={classes.explanation}>Detailed Data</b>
-            <h5 className={classes.explanation}>
-              One result that is provided after an experiment is a set of calculations like the one below. A number of
-              such calculations may be produced; one for each simulation node that attempted the problem. Since results
-              are sometimes based on the measurement of an emulated superposition, the set of calculations from any one
-              experiment trial may contain various answers.
-            </h5>
+          <GridItem xs={12} sm={6} md={6}>
             <b className={classes.explanation}>teleportation.qasm</b>
             <pre className={classes.codeblock}>{`
         OPENQASM 2.0;
@@ -147,6 +154,23 @@ class ProductSection extends React.Component {
         h q[2];
         measure q[1] -> c[0];
         `}</pre>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6}>
+            <b className={classes.explanation}>I / O</b>
+            <h5 className={classes.explanation}>
+              To initiaite an emulation, an OPEN QASM script can be uplaoded. The Quantum Emulation Engine will then
+              provision the resources necessary to acheive a emulation with the requested output resolution.
+            </h5>
+            <h5 className={classes.explanation}>
+              One result that is provided after an experiment is a set of calculations like the output below. A number
+              of such calculations may be produced; one for each emulation node that attempted the problem. Since
+              results are sometimes based on the measurement of an emulated superposition, the set of calculations from
+              any one experiment trial may contain various answers.
+            </h5>
+          </GridItem>
+        </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={6}>
             <b className={classes.explanation}>Output</b>
             <pre className={classes.codeblock}>{`
         State to transmit: 0
@@ -176,10 +200,37 @@ class ProductSection extends React.Component {
         State received: 0
         
         `}</pre>
-            <b className={classes.explanation}>Computatonal resources used</b>
-            <NestedTreeMap dataSeries={resourcesDataSeries} dataTitle={'Runs'} />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
+            <b className={classes.explanation}>Exlporable data</b>
+            <h5 className={classes.explanation}>
+              The output calculation goes further than alternative simulators, but still has many limitations.
+              Physicists are often not interested only in the circuit model of a quantum information processing task and
+              its description in Dirac notation.
+            </h5>
+            <h5 className={classes.explanation}>
+              So, a graph with zoom capabilities is generated that maps out the probabilistic state transitions between
+              being fully 0 and fully 1 that each qubit experienced during an emulation.
+            </h5>
+            {isMobile === false && <b className={classes.explanation}>Intermediate qubit states</b>}
+            {isMobile === false && <ZoomableChart dataSeries={qubitDataSeries} />}
+          </GridItem>
+        </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={6}>
+            <b className={classes.explanation}>The basics</b>
+            <h5 className={classes.explanation}>
+              Detailed data is helpful, but sometimes it is the simple end result that inspires or validates an
+              algorithm.
+            </h5>
+            {isMobile === false && (
+              <GridContainer>
+                <GridItem xs={12} sm={12} md={12}>
+                  <b className={classes.explanation}>Circuit diagram</b>
+                  <img src={teleportation} alt="circuit" />
+                </GridItem>
+              </GridContainer>
+            )}
             <b className={classes.explanation}>Most probable measurement results</b>
             <GridContainer justify="center" className={classes.paddedContainer}>
               <GridItem xs={6} sm={6} md={6} className={classes.titleBlock}>
@@ -207,12 +258,61 @@ class ProductSection extends React.Component {
                 </Badge>
               </GridItem>
             </GridContainer>
-            <b className={classes.explanation}>Simulator measurement outputs</b>
-            <SimpleBarChart dataSeries={resultDataSeries} />
-            <b className={classes.explanation}>Intermediate qubit states</b>
-            <ZoomableChart dataSeries={qubitDataSeries} />
-            <b className={classes.explanation}>Circuit diagram</b>
-            <img src={teleportation} alt="circuit" />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
+            <b className={classes.explanation}>Resources</b>
+            <h5 className={classes.explanation}>
+              The platform provides insight into the results generated by each emulation node, not
+              just the overal stochastic result.
+            </h5>
+            {isMobile === false && (
+              <GridContainer>
+                <GridItem xs={12} sm={12} md={12}>
+                  <b className={classes.explanation}>Simulator measurement outputs</b>
+                  <SimpleBarChart dataSeries={resultDataSeries} />
+                </GridItem>
+              </GridContainer>
+            )}
+            <b className={classes.explanation}>Computatonal resources used</b>
+            <NestedTreeMap dataSeries={resourcesDataSeries} dataTitle={'Runs'} />
+          </GridItem>
+        </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={12}>
+            <b className={classes.explanation}>Density matrices</b>
+            <h5 className={classes.explanation}>
+              Get into the math. We are doing linear algebra under the hood, and you are a certified mechanic. Just
+              change a setting to have a look for yourself.
+            </h5>
+            <pre className={classes.codeblock}>{`
+              ...
+
+              h (0) + 1.000|000> = + 1.000|000> + 1.000|100>
+              
+              normalizing factor: 0.7071067811865475
+              
+              |Ψ> = + 0.707|000> + 0.707|100>
+              
+              qubit 0 density matrix:
+              
+               _         _
+              |0.5     0.5|
+              |0.5     0.5|
+               -         -
+              qubit 1 density matrix:
+              
+               _         _
+              |2.0     0.0|
+              |0.0     0.0|
+               -         -
+              qubit 2 density matrix:
+              
+               _         _
+              |2.0     0.0|
+              |0.0     0.0|
+               -         -
+              ...
+            `}</pre>
           </GridItem>
         </GridContainer>
       </div>

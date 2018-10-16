@@ -1,6 +1,4 @@
 import React from 'react'
-// nodejs library that concatenates classes
-import classNames from 'classnames'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -11,6 +9,8 @@ import GridContainer from '../../../components/Grid/GridContainer.jsx'
 import GridItem from '../../../components/Grid/GridItem.jsx'
 import Card from '../../../components/Card/Card.jsx'
 import CardBody from '../../../components/Card/CardBody.jsx'
+import RegularButton from '../../../components/CustomButtons/Button.jsx'
+
 import researchStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/researchStyle.jsx'
 
 import research1 from '../../../assets/img/qcircuit.png'
@@ -19,6 +19,9 @@ import research2 from '../../../assets/img/ccircuit.png'
 class ResearchSection extends React.Component {
   render() {
     const { classes } = this.props
+    const scrollToBottom = () => {
+      window.scrollTo(0, document.body.scrollHeight)
+    }
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
@@ -69,6 +72,10 @@ class ResearchSection extends React.Component {
                   </p>
                 </CardBody>
               </Card>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={12}>
+              <h3 className={classes.title}>Doing research of your own?</h3>
+              <RegularButton onClick={scrollToBottom}>Use the Emulator</RegularButton>
             </GridItem>
           </GridContainer>
         </div>
