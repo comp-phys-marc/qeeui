@@ -1,0 +1,21 @@
+{
+  "main.css": "/static/css/main.aafe3d79.chunk.css",
+  "main.js": "/static/js/main.e12e7bab.chunk.js",
+  "main.js.map": "/static/js/main.e12e7bab.chunk.js.map",
+  "static/css/1.6edcea85.chunk.css": "/static/css/1.6edcea85.chunk.css",
+  "static/js/1.c371007c.chunk.js": "/static/js/1.c371007c.chunk.js",
+  "static/js/1.c371007c.chunk.js.map": "/static/js/1.c371007c.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/media/bg7.jpg": "/static/media/bg7.b08234a2.jpg",
+  "static/media/ccircuit.png": "/static/media/ccircuit.abb933af.png",
+  "static/media/teleportationcircuit.png": "/static/media/teleportationcircuit.c1f136ee.png",
+  "static/media/landing-background.png": "/static/media/landing-background.b7e26e53.png",
+  "static/media/mobile-landing-background.png": "/static/media/mobile-landing-background.69d739f7.png",
+  "static/media/qcircuit.png": "/static/media/qcircuit.068be206.png",
+  "static/css/1.6edcea85.chunk.css.map": "/static/css/1.6edcea85.chunk.css.map",
+  "static/css/main.aafe3d79.chunk.css.map": "/static/css/main.aafe3d79.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.d2952f728f80afa8af068669b431b58d.js": "/precache-manifest.d2952f728f80afa8af068669b431b58d.js",
+  "service-worker.js": "/service-worker.js"
+}
