@@ -13,8 +13,12 @@ const productStyle = {
     textDecoration: 'none'
   },
   description: {
-    color: '#999'
-  }
+    color: '#808080'
+  },
+  explanation: {
+    color: '#808080',
+    textAlign: 'left'
+  },
 }
 
 export default productStyle

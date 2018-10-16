@@ -27,33 +27,17 @@ function Footer({ ...props }) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="https://www.creative-tim.com/" className={classes.block} target="_blank">
-                Creative Tim
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="https://www.creative-tim.com/presentation" className={classes.block} target="_blank">
-                About us
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="http://blog.creative-tim.com/" className={classes.block} target="_blank">
-                Blog
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="https://www.creative-tim.com/license" className={classes.block} target="_blank">
-                Licenses
+              <a href="https://mackedweise.github.io" className={classes.block}>
+                Marcus Edwards
               </a>
             </ListItem>
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with <Favorite className={classes.icon} /> by{' '}
+          &copy; {1900 + new Date().getYear()} by{' '}
           <a href="https://www.creative-tim.com" className={aClasses} target="_blank">
-            Creative Tim
+            Marcus Edwards
           </a>{' '}
-          for a better web.
         </div>
       </div>
     </footer>

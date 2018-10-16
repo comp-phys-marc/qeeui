@@ -11,7 +11,6 @@ import Header from '../../components/Header/Header.jsx'
 import Footer from '../../components/Footer/Footer.jsx'
 import GridContainer from '../../components/Grid/GridContainer.jsx'
 import GridItem from '../../components/Grid/GridItem.jsx'
-import Button from '../../components/CustomButtons/Button.jsx'
 import HeaderLinks from '../../components/Header/HeaderLinks.jsx'
 import Parallax from '../../components/Parallax/Parallax.jsx'
 
@@ -19,14 +18,38 @@ import landingPageStyle from '../../assets/jss/material-kit-react/views/landingP
 
 // Sections for this page
 import ProductSection from './sections/productSection.jsx'
-import TeamSection from './sections/teamSection.jsx'
+import ResearchSection from './sections/researchSection.jsx'
 import WorkSection from './sections/workSection.jsx'
+import ExampleSection from './sections/exampleSection.jsx'
 
 const dashboardRoutes = []
 
 class LandingPage extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      width: window.innerWidth
+    }
+  }
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  // make sure to remove the listener
+  // when the component is not mounted anymore
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange)
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth })
+  }
+
   render() {
     const { classes, ...rest } = this.props
+    const { width } = this.state
+    const isMobile = width <= 900
     return (
       <div>
         <Header
@@ -41,34 +64,43 @@ class LandingPage extends React.Component {
           }}
           {...rest}
         />
-        <Parallax filter image={require('../../assets/img/landing-bg.jpg')}>
-          <div className={classes.container}>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Your Story Starts With Us.</h1>
-                <h4>
-                  Every landing page needs a small description after the big bold title, that's why we added this text
-                  here. Add here all the information that can make you or your product create the first impression.
-                </h4>
-                <br />
-                <Button
-                  color="danger"
-                  size="lg"
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-play" />
-                  Watch video
-                </Button>
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
+        {isMobile === false && (
+          <Parallax filter image={require('../../assets/img/landing-background.png')}>
+            <div className={classes.container}>
+              <GridContainer>
+                <GridItem xs={12} sm={12} md={6}>
+                  <h1 className={classes.title}>Take quantum research to the next level.</h1>
+                  <h4>
+                    Harness Google's Cloud infrastructure and AI to emulate, analyze and interpret quantum computing
+                    experiments.
+                  </h4>
+                  <br />
+                </GridItem>
+              </GridContainer>
+            </div>
+          </Parallax>
+        )}
+        {isMobile === true && (
+          <Parallax filter image={require('../../assets/img/mobile-landing-background.png')}>
+            <div className={classes.container}>
+              <GridContainer>
+                <GridItem xs={12} sm={12} md={6}>
+                  <h1 className={classes.title}>A powerful research tool.</h1>
+                  <h4>
+                    Harness Google's Cloud infrastructure and AI to emulate, analyze and interpret qunatum computing
+                    experiments.
+                  </h4>
+                  <br />
+                </GridItem>
+              </GridContainer>
+            </div>
+          </Parallax>
+        )}
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <ProductSection />
-            <TeamSection />
+            <ResearchSection />
+            <ExampleSection />
             <WorkSection />
           </div>
         </div>

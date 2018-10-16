@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { simpleAction } from './actions/simpleAction'
-import { Route, NavLink, HashRouter } from 'react-router-dom'
+import { Route, HashRouter } from 'react-router-dom'
 import './App.css'
 import Landing from './pages/landing/landing'
 import Simulations from './pages/simulations'

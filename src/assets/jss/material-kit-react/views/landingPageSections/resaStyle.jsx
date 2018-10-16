@@ -1,7 +1,7 @@
 import { cardTitle, title } from '../../../material-kit-react.jsx'
-import imagesStyle from '../../../material-kit-react/imagesStyles.jsx'
+import imagesStyle from '../../imagesStyles.jsx'
 
-const teamStyle = {
+const researchStyle = {
   section: {
     padding: '70px 0',
     textAlign: 'center'
@@ -23,7 +23,7 @@ const teamStyle = {
     color: '#6c757d'
   },
   description: {
-    color: '#999'
+    color: '#808080'
   },
   justifyCenter: {
     justifyContent: 'center !important'
@@ -44,4 +44,4 @@ const teamStyle = {
   }
 }
 
-export default teamStyle
+export default researchStyle
