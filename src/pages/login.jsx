@@ -21,7 +21,7 @@ import CustomInput from '../components/CustomInput/CustomInput.jsx'
 
 import loginPageStyle from '../assets/jss/material-kit-react/views/loginPage.jsx'
 
-import image from '../assets/img/bg7.jpg'
+import image from '../assets/img/computers-circuit-board-and-microchips.jpg'
 
 class Login extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Login extends React.Component {
     const { classes, ...rest } = this.props
     return (
       <div>
-        <Header absolute color="transparent" brand="Material Kit React" rightLinks={<HeaderLinks />} {...rest} />
+        <Header absolute brand="Quantum Emulation Engine" rightLinks={<HeaderLinks />} {...rest} />
         <div
           className={classes.pageHeader}
           style={{
@@ -61,24 +61,6 @@ class Login extends React.Component {
                     <CardHeader color="primary" className={classes.cardHeader}>
                       <h4>Login</h4>
                       <div className={classes.socialLine}>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={'fab fa-twitter'} />
-                        </Button>
-                        <Button
-                          justIcon
-                          href="#pablo"
-                          target="_blank"
-                          color="transparent"
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className={'fab fa-facebook'} />
-                        </Button>
                         <Button
                           justIcon
                           href="#pablo"

@@ -44,7 +44,7 @@ class Simulations extends React.Component {
     const { classes, ...rest } = this.props
     return (
       <div>
-        <Header absolute color="transparent" brand="Material Kit React" rightLinks={<HeaderLinks />} {...rest} />
+        <Header absolute color="transparent" brand="Quantum Emulation Engine" rightLinks={<HeaderLinks />} {...rest} />
         <div
           className={classes.pageHeader}
           style={{

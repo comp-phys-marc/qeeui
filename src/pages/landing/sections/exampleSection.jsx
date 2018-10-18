@@ -131,7 +131,7 @@ class ProductSection extends React.Component {
     const { isMobile } = this.state
 
     return (
-      <div classname="classes.section">
+      <div className="classes.section">
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Example Experiment</h2>
