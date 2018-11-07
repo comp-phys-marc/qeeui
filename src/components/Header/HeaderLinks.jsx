@@ -12,8 +12,8 @@ import ListItem from '@material-ui/core/ListItem'
 import { Apps, CloudDownload } from '@material-ui/icons'
 
 // core components
-import CustomDropdown from '..//CustomDropdown/CustomDropdown.jsx'
-import Button from '..//CustomButtons/Button.jsx'
+import CustomDropdown from '../CustomDropdown/CustomDropdown.jsx'
+import Button from '../CustomButtons/Button.jsx'
 
 import headerLinksStyle from '../../assets/jss/material-kit-react/components/headerLinksStyle.jsx'
 
@@ -33,6 +33,9 @@ function HeaderLinks({ ...props }) {
           dropdownList={[
             <Link to="/login" className={classes.dropdownLink}>
               Login
+            </Link>,
+            <Link to="/dashboard" className={classes.dropdownLink}>
+              Demo
             </Link>
           ]}
         />

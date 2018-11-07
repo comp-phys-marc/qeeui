@@ -22,7 +22,7 @@ import ResearchSection from './sections/researchSection.jsx'
 import WorkSection from './sections/workSection.jsx'
 import ExampleSection from './sections/exampleSection.jsx'
 
-const dashboardRoutes = []
+const landingRoutes = []
 
 class LandingPage extends React.Component {
   constructor() {
@@ -54,7 +54,7 @@ class LandingPage extends React.Component {
       <div>
         <Header
           color="transparent"
-          routes={dashboardRoutes}
+          routes={landingRoutes}
           brand="Quantum Emulation Engine"
           rightLinks={<HeaderLinks />}
           fixed
@@ -86,10 +86,6 @@ class LandingPage extends React.Component {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <h1 className={classes.title}>Take quantum research to the next level.</h1>
-                  <h4>
-                    Harness Google's Cloud infrastructure and AI to emulate, analyze and interpret qunatum computing
-                    experiments.
-                  </h4>
                   <br />
                 </GridItem>
               </GridContainer>

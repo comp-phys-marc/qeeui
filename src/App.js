@@ -7,6 +7,7 @@ import Landing from './pages/landing/landing'
 import Simulations from './pages/simulations'
 import Editor from './pages/editor'
 import Login from './pages/login'
+import Dashboard from './pages/dashboard'
 
 const mapStateToProps = state => ({
   ...state
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/stuff" component={Simulations} />
             <Route path="/contact" component={Editor} />
+            <Route path="/dashboard" component={Dashboard} />
           </div>
         </div>
       </HashRouter>
