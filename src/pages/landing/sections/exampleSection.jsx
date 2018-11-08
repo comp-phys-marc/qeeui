@@ -10,9 +10,10 @@ import GridItem from '../../../components/Grid/GridItem.jsx'
 import SimpleBarChart from '../../../components/simpleBarChart/simpleBarChart.jsx'
 import ZoomableChart from '../../../components/zoomableChart/zoomableChart.jsx'
 import NestedTreeMap from '../../../components/nestedTreeMap/nestedTreeMap.jsx'
+import Code from '../../../components/Code/Code.jsx'
 
 import teleportation from '../../../assets/img/teleportationcircuit.png'
-import productStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/exampleStyle.jsx'
+import exampleStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/exampleStyle.jsx'
 
 const resultDataSeries = [
   {
@@ -114,7 +115,7 @@ const resourcesDataSeries = {
   ]
 }
 
-class ProductSection extends React.Component {
+class ExampleSection extends React.Component {
   static propTypes = {
     isMobile: PropTypes.bool
   }
@@ -140,20 +141,21 @@ class ProductSection extends React.Component {
         </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
-            <b className={classes.explanation}>teleportation.qasm</b>
-            <pre className={classes.codeblock}>{`
-        OPENQASM 2.0;
-        include "qelib1.inc";
-        
-        qreg q[3];
-        creg c[1];
-        
-        h q[0];
-        cx q[0],q[1];
-        cx q[2],q[0];
-        h q[2];
-        measure q[1] -> c[0];
-        `}</pre>
+            <Code
+              title="teleportation.qasm"
+              code="
+                OPENQASM 2.0;
+                include &quot;qelib1.inc&quot;;
+                
+                qreg q[3];
+                creg c[1];
+                
+                h q[0];
+                cx q[0],q[1];
+                cx q[2],q[0];
+                h q[2];
+                measure q[1] -> c[0];"
+            />
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
             <b className={classes.explanation}>I / O</b>
@@ -171,35 +173,35 @@ class ProductSection extends React.Component {
         </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
-            <b className={classes.explanation}>Output</b>
-            <pre className={classes.codeblock}>{`
-        State to transmit: 0
-        h (0) + 1.000|000> = + 1.000|000> + 1.000|100>
-        normalizing factor: 0.7071067811865475
-        |Ψ> = + 0.707|000> + 0.707|100>
-        cx (0 -> 1) + 0.707|000> = + 0.707|000>
-        cx (0 -> 1) + 0.707|100> = + 0.707|110>
-        normalizing factor: 1.0000000000000002
-        |Ψ> = + 0.707|000> + 0.707|110>
-        cx (2 -> 0) + 0.707|000> = + 0.707|000>
-        cx (2 -> 0) + 0.707|110> = + 0.707|110>
-        normalizing factor: 1.0
-        |Ψ> = + 0.707|000> + 0.707|110>
-        h (2) + 0.707|000> = + 0.707|000> + 0.707|001>
-        h (2) + 0.707|110> = + 0.707|110> + 0.707|111>
-        normalizing factor: 0.7071067811865475
-        |Ψ> = + 0.500|000> + 0.500|001> + 0.500|110> + 0.500|111>
-        normalizing factor: 1.414213562373095
-        |Ψ> = + 0.707|000> + 0.707|110>
-        normalizing factor: 1.4142135623730951
-        |Ψ> = + 1.000|110>
-        Alice measures 0, 1
-        x (1) + 1.000|110> = + 1.000|100>
-        normalizing factor: 1.0
-        |Ψ> = + 1.000|100>
-        State received: 0
-        
-        `}</pre>
+            <Code
+              title="Output"
+              code="
+              State to transmit: 0\n
+              h (0) + 1.000|000> = + 1.000|000> + 1.000|100>\n
+              normalizing factor: 0.7071067811865475\n
+              |Ψ> = + 0.707|000> + 0.707|100>\n
+              cx (0 -> 1) + 0.707|000> = + 0.707|000>\n
+              cx (0 -> 1) + 0.707|100> = + 0.707|110>\n
+              normalizing factor: 1.0000000000000002\n
+              |Ψ> = + 0.707|000> + 0.707|110>\n
+              cx (2 -> 0) + 0.707|000> = + 0.707|000>\n
+              cx (2 -> 0) + 0.707|110> = + 0.707|110>\n
+              normalizing factor: 1.0\n
+              |Ψ> = + 0.707|000> + 0.707|110>\n
+              h (2) + 0.707|000> = + 0.707|000> + 0.707|001>\n
+              h (2) + 0.707|110> = + 0.707|110> + 0.707|111>\n
+              normalizing factor: 0.7071067811865475\n
+              |Ψ> = + 0.500|000> + 0.500|001> + 0.500|110> + 0.500|111>\n
+              normalizing factor: 1.414213562373095\n
+              |Ψ> = + 0.707|000> + 0.707|110>\n
+              normalizing factor: 1.4142135623730951\n
+              |Ψ> = + 1.000|110>\n
+              Alice measures 0, 1\n
+              x (1) + 1.000|110> = + 1.000|100>\n
+              normalizing factor: 1.0\n
+              |Ψ> = + 1.000|100>\n
+              State received: 0"
+            />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
             <b className={classes.explanation}>Exlporable data</b>
@@ -262,8 +264,8 @@ class ProductSection extends React.Component {
           <GridItem xs={12} sm={12} md={6}>
             <b className={classes.explanation}>Resources</b>
             <h5 className={classes.explanation}>
-              The platform provides insight into the results generated by each emulation node, not
-              just the overal stochastic result.
+              The platform provides insight into the results generated by each emulation node, not just the overal
+              stochastic result.
             </h5>
             {isMobile === false && (
               <GridContainer>
@@ -284,35 +286,37 @@ class ProductSection extends React.Component {
               Get into the math. We are doing linear algebra under the hood, and you are a certified mechanic. Just
               change a setting to have a look for yourself.
             </h5>
-            <pre className={classes.codeblock}>{`
-              ...
+            <Code
+              code="
+              ...\n
 
-              h (0) + 1.000|000> = + 1.000|000> + 1.000|100>
+              h (0) + 1.000|000> = + 1.000|000> + 1.000|100>\n
               
-              normalizing factor: 0.7071067811865475
+              normalizing factor: 0.7071067811865475\n
               
-              |Ψ> = + 0.707|000> + 0.707|100>
+              |Ψ> = + 0.707|000> + 0.707|100>\n
               
-              qubit 0 density matrix:
+              qubit 0 density matrix:\n
               
-               _         _
-              |0.5     0.5|
-              |0.5     0.5|
-               -         -
-              qubit 1 density matrix:
+               _         _\n
+             |0.5     0.5|\n
+             |0.5     0.5|\n
+               -         -\n
+              qubit 1 density matrix:\n
               
-               _         _
-              |2.0     0.0|
-              |0.0     0.0|
-               -         -
-              qubit 2 density matrix:
+               _         _\n
+             |2.0     0.0|\n
+             |0.0     0.0|\n
+               -         -\n
+              qubit 2 density matrix:\n
               
-               _         _
-              |2.0     0.0|
-              |0.0     0.0|
-               -         -
+               _         _\n
+             |2.0     0.0|\n
+             |0.0     0.0|\n
+               -         -\n
               ...
-            `}</pre>
+            "
+            />
           </GridItem>
         </GridContainer>
       </div>
@@ -320,4 +324,4 @@ class ProductSection extends React.Component {
   }
 }
 
-export default withStyles(productStyle)(ProductSection)
+export default withStyles(exampleStyle)(ExampleSection)

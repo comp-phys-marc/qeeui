@@ -9,8 +9,11 @@ import Hidden from '@material-ui/core/Hidden'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
 import Icon from '@material-ui/core/Icon'
+// react components for routing our app without refresh
+import { Link } from 'react-router-dom'
+
+import Chalk from '../Typography/Chalk.jsx'
 
 import sidebarStyle from '../../assets/jss/material-dashboard-react/components/sidebarStyle.jsx'
 
@@ -38,11 +41,9 @@ const Sidebar = ({ ...props }) => {
               <ListItemIcon className={classes.itemIcon + whiteFontClasses}>
                 {typeof prop.icon === 'string' ? <Icon>{prop.icon}</Icon> : <prop.icon />}
               </ListItemIcon>
-              <ListItemText
-                primary={prop.sidebarName}
-                className={classes.itemText + whiteFontClasses}
-                disableTypography={true}
-              />
+              <Chalk>
+                <p>{prop.sidebarName}</p>
+              </Chalk>
             </ListItem>
           </NavLink>
         )
@@ -51,12 +52,12 @@ const Sidebar = ({ ...props }) => {
   )
   var brand = (
     <div className={classes.logo}>
-      <a href="#" className={classes.logoLink}>
+      <Link to="/" className={classes.logoLink}>
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
         {logoText}
-      </a>
+      </Link>
     </div>
   )
   return (

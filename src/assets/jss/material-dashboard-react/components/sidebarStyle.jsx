@@ -65,6 +65,7 @@ const sidebarStyle = theme => ({
     ...defaultFont,
     textTransform: 'uppercase',
     padding: '5px 0',
+    marginTop: '5px',
     display: 'block',
     fontSize: '18px',
     textAlign: 'left',
@@ -73,7 +74,7 @@ const sidebarStyle = theme => ({
     textDecoration: 'none',
     backgroundColor: 'transparent',
     '&,&:hover': {
-      color: '#FFFFFF'
+      color: '#a1a1a1'
     }
   },
   logoImage: {

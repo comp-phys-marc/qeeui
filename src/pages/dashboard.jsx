@@ -2,36 +2,27 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // @material-ui/core
 import withStyles from '@material-ui/core/styles/withStyles'
-import Icon from '@material-ui/core/Icon'
 // @material-ui/icons
-import Store from '@material-ui/icons/Store'
-import Warning from '@material-ui/icons/Warning'
-import DateRange from '@material-ui/icons/DateRange'
-import LocalOffer from '@material-ui/icons/LocalOffer'
-import Update from '@material-ui/icons/Update'
-import ArrowUpward from '@material-ui/icons/ArrowUpward'
 import AccessTime from '@material-ui/icons/AccessTime'
-import Accessibility from '@material-ui/icons/Accessibility'
-import BugReport from '@material-ui/icons/BugReport'
-import Code from '@material-ui/icons/Code'
-import Cloud from '@material-ui/icons/Cloud'
+import Build from '@material-ui/icons/Build'
 // core components
 import GridItem from '../components/Grid/GridItem.jsx'
 import GridContainer from '../components/Grid/GridContainer.jsx'
 import Table from '../components/Table/Table.jsx'
-import Tasks from '../components/Tasks/Tasks.jsx'
-import CustomTabs from '../components/CustomTabs/CustomTabs.jsx'
-import Danger from '../components/Typography/Danger.jsx'
 import Card from '../components/Card/Card.jsx'
 import CardHeader from '../components/Card/CardHeader.jsx'
-import CardIcon from '../components/Card/CardIcon.jsx'
 import CardBody from '../components/Card/CardBody.jsx'
 import CardFooter from '../components/Card/CardFooter.jsx'
 import Sidebar from '../components/Sidebar/Sidebar.jsx'
+import Topology from '../components/Topology/Topology.jsx'
+import CodeBlock from '../components/Code/Code.jsx'
+import RegularButton from '../components/CustomButtons/Button.jsx'
 
+import teleportation from '../assets/img/teleportationcircuit.png'
 import dashboardStyle from '../assets/jss/material-dashboard-react/views/dashboardStyle.jsx'
-import image from '../assets/img/bg7.jpg'
-import logo from '../assets/img/qcircuit.png'
+
+import logo from '../assets/img/blackboardLogo.png'
+import blackboard from '../assets/img/blackboard.jpg'
 
 class Dashboard extends React.Component {
   state = {
@@ -51,184 +42,120 @@ class Dashboard extends React.Component {
         <GridContainer>
           <GridItem xs={0} sm={0} md={3}>
             <Sidebar
-              routes={[]}
-              logoText={'Console'}
+              routes={[
+                {
+                  path: '/dashboard',
+                  sidebarName: 'Teleportation',
+                  icon: Build
+                }
+              ]}
+              logoText={'Experiments'}
               logo={logo}
-              image={image}
+              image={blackboard}
               handleDrawerToggle={this.handleDrawerToggle}
               open={false}
-              color="primary"
               {...rest}
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={8}>
-            <GridContainer>
-              <GridItem xs={12} sm={6} md={3}>
-                <Card>
-                  <CardHeader color="warning" stats icon>
-                    <CardIcon color="warning">
-                      <Icon>content_copy</Icon>
-                    </CardIcon>
-                    <p className={classes.cardCategory}>Used Space</p>
-                    <h3 className={classes.cardTitle}>
-                      49/50 <small>GB</small>
-                    </h3>
+            <GridContainer className={classes.mainContainer}>
+            <GridItem xs={12} sm={12} md={6}>
+                <Card className={classes.card}>
+                  <CardHeader color="primary">
+                    <GridContainer>
+                      <GridItem xs={6} sm={6} md={6}>
+                        <h4 className={classes.cardTitleWhite}>QASM Code</h4>
+                      </GridItem>
+                      <GridItem xs={6} sm={6} md={6}>
+                        <p className={classes.cardCategoryWhite}>Circuit Definition</p>
+                      </GridItem>
+                    </GridContainer>
                   </CardHeader>
-                  <CardFooter stats>
-                    <div className={classes.stats}>
-                      <Danger>
-                        <Warning />
-                      </Danger>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        Get more space
-                      </a>
-                    </div>
-                  </CardFooter>
-                </Card>
-              </GridItem>
-              <GridItem xs={12} sm={6} md={3}>
-                <Card>
-                  <CardHeader color="success" stats icon>
-                    <CardIcon color="success">
-                      <Store />
-                    </CardIcon>
-                    <p className={classes.cardCategory}>Revenue</p>
-                    <h3 className={classes.cardTitle}>$34,245</h3>
-                  </CardHeader>
-                  <CardFooter stats>
-                    <div className={classes.stats}>
-                      <DateRange />
-                      Last 24 Hours
-                    </div>
-                  </CardFooter>
-                </Card>
-              </GridItem>
-              <GridItem xs={12} sm={6} md={3}>
-                <Card>
-                  <CardHeader color="danger" stats icon>
-                    <CardIcon color="danger">
-                      <Icon>info_outline</Icon>
-                    </CardIcon>
-                    <p className={classes.cardCategory}>Fixed Issues</p>
-                    <h3 className={classes.cardTitle}>75</h3>
-                  </CardHeader>
-                  <CardFooter stats>
-                    <div className={classes.stats}>
-                      <LocalOffer />
-                      Tracked from Github
-                    </div>
-                  </CardFooter>
-                </Card>
-              </GridItem>
-              <GridItem xs={12} sm={6} md={3}>
-                <Card>
-                  <CardHeader color="info" stats icon>
-                    <CardIcon color="info">
-                      <Accessibility />
-                    </CardIcon>
-                    <p className={classes.cardCategory}>Followers</p>
-                    <h3 className={classes.cardTitle}>+245</h3>
-                  </CardHeader>
-                  <CardFooter stats>
-                    <div className={classes.stats}>
-                      <Update />
-                      Just Updated
-                    </div>
-                  </CardFooter>
-                </Card>
-              </GridItem>
-            </GridContainer>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={4}>
-                <Card chart>
-                  <CardHeader color="success" />
                   <CardBody>
-                    <h4 className={classes.cardTitle}>Daily Sales</h4>
-                    <p className={classes.cardCategory}>
-                      <span className={classes.successText}>
-                        <ArrowUpward className={classes.upArrowCardCategory} /> 55%
-                      </span>{' '}
-                      increase in today sales.
-                    </p>
+                    <CodeBlock
+                      className={classes.smallBlock}
+                      title="teleportation.qasm"
+                      code="
+                OPENQASM 2.0;
+                include &quot;qelib1.inc&quot;;
+                
+                qreg q[3];
+                creg c[1];
+                
+                h q[0];
+                cx q[0],q[1];
+                cx q[2],q[0];
+                h q[2];
+                measure q[1] -> c[0];"
+                    />
                   </CardBody>
-                  <CardFooter chart>
-                    <div className={classes.stats}>
-                      <AccessTime /> updated 4 minutes ago
-                    </div>
+                  <CardFooter>
+                    <RegularButton color="primary">Upload New Code</RegularButton>
+                    <RegularButton color="primary">Edit</RegularButton>
                   </CardFooter>
                 </Card>
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
-                <Card chart>
-                  <CardHeader color="warning" />
+              <GridItem xs={12} sm={12} md={6}>
+                <Card className={classes.card}>
+                  <CardHeader color="success">
+                    <GridContainer>
+                      <GridItem xs={6} sm={6} md={6}>
+                        <h4 className={classes.cardTitleWhite}>Emulation Topology</h4>
+                      </GridItem>
+                      <GridItem xs={6} sm={6} md={6}>
+                        <p className={classes.cardCategoryWhite}>Data Type Densities</p>
+                      </GridItem>
+                    </GridContainer>
+                  </CardHeader>
                   <CardBody>
-                    <h4 className={classes.cardTitle}>Email Subscriptions</h4>
-                    <p className={classes.cardCategory}>Last Campaign Performance</p>
+                    <Topology qubits={3} bits={1} signals={1} />
                   </CardBody>
-                  <CardFooter chart>
-                    <div className={classes.stats}>
-                      <AccessTime /> campaign sent 2 days ago
-                    </div>
-                  </CardFooter>
-                </Card>
-              </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
-                <Card chart>
-                  <CardHeader color="danger" />
-                  <CardBody>
-                    <h4 className={classes.cardTitle}>Completed Tasks</h4>
-                    <p className={classes.cardCategory}>Last Campaign Performance</p>
-                  </CardBody>
-                  <CardFooter chart>
-                    <div className={classes.stats}>
-                      <AccessTime /> campaign sent 2 days ago
-                    </div>
+                  <CardFooter>
+                    <RegularButton color="success">Explanation</RegularButton>
                   </CardFooter>
                 </Card>
               </GridItem>
             </GridContainer>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <CustomTabs
-                  title="Tasks:"
-                  headerColor="primary"
-                  tabs={[
-                    {
-                      tabName: 'Bugs',
-                      tabIcon: BugReport,
-                      tabContent: <Tasks checkedIndexes={[0, 3]} tasksIndexes={[0, 1, 2, 3]} tasks={'tasks'} />
-                    },
-                    {
-                      tabName: 'Website',
-                      tabIcon: Code,
-                      tabContent: <Tasks checkedIndexes={[0]} tasksIndexes={[0, 1]} tasks={'tasks'} />
-                    },
-                    {
-                      tabName: 'Server',
-                      tabIcon: Cloud,
-                      tabContent: <Tasks checkedIndexes={[1]} tasksIndexes={[0, 1, 2]} tasks={'tasks'} />
-                    }
-                  ]}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <Card>
+                <Card className={classes.card}>
                   <CardHeader color="warning">
-                    <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
-                    <p className={classes.cardCategoryWhite}>New employees on 15th September, 2016</p>
+                    <h4 className={classes.cardTitleWhite}>Executions</h4>
                   </CardHeader>
                   <CardBody>
                     <Table
                       tableHeaderColor="warning"
-                      tableHead={['ID', 'Name', 'Salary', 'Country']}
+                      tableHead={['ID', 'Runs', 'Speed', 'Correlation', 'Date']}
                       tableData={[
-                        ['1', 'Dakota Rice', '$36,738', 'Niger'],
-                        ['2', 'Minerva Hooper', '$23,789', 'Curaçao'],
-                        ['3', 'Sage Rodriguez', '$56,142', 'Netherlands'],
-                        ['4', 'Philip Chaney', '$38,735', 'Korea, South']
+                        ['1', '900', '561676420', '88%', 'Nov 8, 2018 2:56:36 PM'],
+                        ['2', '900', '561635201', '90%', 'Nov 9, 2018 2:00:12 PM']
                       ]}
                     />
                   </CardBody>
+                  <CardFooter>
+                    <RegularButton color="warning">New Execution</RegularButton>
+                    <RegularButton color="warning">Results</RegularButton>
+                  </CardFooter>
+                </Card>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
+                <Card className={classes.card}>
+                  <CardHeader color="info">
+                    <GridContainer>
+                      <GridItem xs={6} sm={6} md={6}>
+                        <h4 className={classes.cardTitleWhite}>Circuit Diagram</h4>
+                      </GridItem>
+                      <GridItem xs={6} sm={6} md={6}>
+                        <p className={classes.cardCategoryWhite}>Quantum Operations</p>
+                      </GridItem>
+                    </GridContainer>
+                  </CardHeader>
+                  <CardBody>
+                    <img className={classes.responsiveImage} src={teleportation} alt="circuit" />
+                  </CardBody>
+                  <CardFooter>
+                  <RegularButton color="info">Save</RegularButton>
+                  </CardFooter>
                 </Card>
               </GridItem>
             </GridContainer>

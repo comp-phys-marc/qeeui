@@ -74,6 +74,18 @@ const dashboardStyle = {
   },
   mainContainer: {
     marginTop: '70px'
+  },
+  smallBlock: {
+    maxHeight: '100px',
+    overflowY: 'scroll'
+  },
+  responsiveImage: {
+    margin: 'auto',
+    width: '100%'
+  },
+  card: {
+    minHeight: '55vh',
+    overflow: 'visible'
   }
 }
 
