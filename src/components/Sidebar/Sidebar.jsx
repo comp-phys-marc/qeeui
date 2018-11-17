@@ -56,7 +56,11 @@ const Sidebar = ({ ...props }) => {
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
-        {logoText}
+        <div className={classes.logoTextContainer}>
+          <Chalk>
+            <p>{logoText}</p>
+          </Chalk>
+        </div>
       </Link>
     </div>
   )

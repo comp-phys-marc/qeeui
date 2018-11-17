@@ -8,8 +8,7 @@ import codeStyle from '../../assets/jss/material-dashboard-react/components/code
 class Code extends React.Component {
   static propTypes = {
     title: PropTypes.string,
-    code: PropTypes.string,
-    color: PropTypes.color
+    code: PropTypes.string
   }
 
   constructor(props) {
@@ -17,8 +16,7 @@ class Code extends React.Component {
 
     this.state = {
       title: this.props.title,
-      code: this.props.code,
-      color: this.props.color
+      code: this.props.code
     }
   }
   render() {

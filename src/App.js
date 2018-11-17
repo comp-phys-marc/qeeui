@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { simpleAction } from './actions/simpleAction'
+import { selectExecution } from './actions/executions'
 import { Route, HashRouter } from 'react-router-dom'
 import './App.css'
 import Landing from './pages/landing/landing'
-import Simulations from './pages/simulations'
+import Results from './pages/results'
 import Editor from './pages/editor'
 import Login from './pages/login'
 import Dashboard from './pages/dashboard'
@@ -13,12 +13,12 @@ const mapStateToProps = state => ({
   ...state
 })
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+  selectExecution: () => dispatch(selectExecution())
 })
 
 class App extends Component {
-  simpleAction = event => {
-    this.props.simpleAction()
+  selectExecution = event => {
+    this.props.selectExecution()
   }
   render() {
     return (
@@ -27,7 +27,7 @@ class App extends Component {
           <div className="content">
             <Route exact path="/" component={Landing} />
             <Route path="/login" component={Login} />
-            <Route path="/stuff" component={Simulations} />
+            <Route path="/stuff" component={Results} />
             <Route path="/contact" component={Editor} />
             <Route path="/dashboard" component={Dashboard} />
           </div>

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import simpleReducer from './simpleReducer'
+import executions from './executions'
 export default combineReducers({
-  simpleReducer
+  executions
 })

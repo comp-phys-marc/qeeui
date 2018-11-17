@@ -84,6 +84,9 @@ const sidebarStyle = theme => ({
     marginLeft: '10px',
     marginRight: '15px'
   },
+  logoTextContainer: {
+    display: 'inline-block'
+  },
   img: {
     width: '35px',
     top: '22px',
