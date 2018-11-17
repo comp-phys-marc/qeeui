@@ -11,7 +11,7 @@ import CardFooter from '../Card/CardFooter.jsx'
 import RegularButton from '../CustomButtons/Button.jsx'
 import Topology from '../Topology/Topology.jsx'
 
-import dashboardStyle from '../../assets/jss/material-dashboard-react/views/dashboardStyle.jsx'
+import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
 class TopologyCard extends React.Component {
   static propTypes = {
@@ -54,4 +54,4 @@ class TopologyCard extends React.Component {
   }
 }
 
-export default withStyles(dashboardStyle)(TopologyCard)
+export default withStyles(dashboardCardStyle)(TopologyCard)

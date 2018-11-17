@@ -10,11 +10,11 @@ import CardBody from '../Card/CardBody.jsx'
 import CardFooter from '../Card/CardFooter.jsx'
 import RegularButton from '../CustomButtons/Button.jsx'
 
-import dashboardStyle from '../../assets/jss/material-dashboard-react/views/dashboardStyle.jsx'
+import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
 class CircuitCard extends React.Component {
   static propTypes = {
-    circuit: PropTypes.object.isRequired
+    circuit: PropTypes.string.isRequired
   }
 
   constructor(props) {
@@ -49,4 +49,4 @@ class CircuitCard extends React.Component {
   }
 }
 
-export default withStyles(dashboardStyle)(CircuitCard)
+export default withStyles(dashboardCardStyle)(CircuitCard)

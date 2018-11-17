@@ -14,7 +14,7 @@ import Table from '../Table/Table.jsx'
 import { connect } from 'react-redux'
 import { selectExecution } from '../../actions/executions'
 
-import dashboardStyle from '../../assets/jss/material-dashboard-react/views/dashboardStyle.jsx'
+import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
 const mapStateToProps = state => state.executions
 const mapDispatchToProps = dispatch => ({
@@ -74,4 +74,4 @@ class ExecutionCard extends React.Component {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withStyles(dashboardStyle)(ExecutionCard))
+)(withStyles(dashboardCardStyle)(ExecutionCard))

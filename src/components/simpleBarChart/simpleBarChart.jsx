@@ -28,7 +28,7 @@ class SimpleBarChart extends React.Component {
     const { series } = this.state
     return (
       <div>
-        <XYPlot xType="ordinal" width={500} height={300} xDistance={100}>
+        <XYPlot xType="ordinal" width={this.props.width} height={this.props.height} xDistance={100}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />
@@ -41,7 +41,7 @@ class SimpleBarChart extends React.Component {
         <DiscreteColorLegend
           orientation="horizontal"
           height={100}
-          width={500}
+          width={this.props.width}
           items={[...this.state.series.map((entry, index) => entry.title)]}
         />
       </div>

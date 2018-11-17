@@ -13,15 +13,15 @@ import CodeBlock from '../Code/Code.jsx'
 
 import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
-class CodeCard extends React.Component {
+class OutputCard extends React.Component {
   static propTypes = {
-    code: PropTypes.object.isRequired
+    outputs: PropTypes.array.isRequired
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      code: this.props.code
+      outputs: this.props.outputs
     }
   }
 
@@ -32,23 +32,24 @@ class CodeCard extends React.Component {
         <CardHeader color="primary">
           <GridContainer>
             <GridItem xs={6} sm={6} md={6}>
-              <h4 className={classes.cardTitleWhite}>QASM Code</h4>
+              <h4 className={classes.cardTitleWhite}>Computation Output</h4>
             </GridItem>
             <GridItem xs={6} sm={6} md={6}>
-              <p className={classes.cardCategoryWhite}>Circuit Definition</p>
+              <p className={classes.cardCategoryWhite}>Math</p>
             </GridItem>
           </GridContainer>
         </CardHeader>
         <CardBody>
-          <CodeBlock className={classes.smallBlock} title={this.state.code.name} code={this.state.code.qasm} />
+          {this.state.outputs.map(output => {
+            return <CodeBlock className={classes.smallBlock} title={`Output ${output.id}`} code={output.content} />
+          })}
         </CardBody>
         <CardFooter>
-          <RegularButton color="primary">Upload New Code</RegularButton>
-          <RegularButton color="primary">Edit</RegularButton>
+          <RegularButton color="primary">Export</RegularButton>
         </CardFooter>
       </Card>
     )
   }
 }
 
-export default withStyles(dashboardCardStyle)(CodeCard)
+export default withStyles(dashboardCardStyle)(OutputCard)

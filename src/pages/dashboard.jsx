@@ -13,7 +13,7 @@ import CodeCard from '../components/codeCard/codeCard.jsx'
 import Sidebar from '../components/Sidebar/Sidebar.jsx'
 import TopologyCard from '../components/topologyCard/topologyCard.jsx'
 
-import dashboardStyle from '../assets/jss/material-dashboard-react/views/dashboardStyle.jsx'
+import dashboardCardStyle from '../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
 import logo from '../assets/img/blackboardLogo.png'
 import blackboard from '../assets/img/blackboard.jpg'
@@ -80,4 +80,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default withStyles(dashboardStyle)(Dashboard)
+export default withStyles(dashboardCardStyle)(Dashboard)

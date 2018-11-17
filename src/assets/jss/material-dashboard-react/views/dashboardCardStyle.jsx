@@ -1,6 +1,6 @@
 import { successColor } from '../../material-dashboard-react.jsx'
 
-const dashboardStyle = {
+const dashboardCardStyle = {
   successText: {
     color: successColor
   },
@@ -89,4 +89,4 @@ const dashboardStyle = {
   }
 }
 
-export default dashboardStyle
+export default dashboardCardStyle

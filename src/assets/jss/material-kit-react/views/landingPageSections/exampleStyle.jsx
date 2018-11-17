@@ -20,28 +20,8 @@ const exampleStyle = {
     color: '#808080',
     textAlign: 'left'
   },
-  paddedContainer: {
-    padding: '10%'
-  },
-  badgeBlock: {
-    borderStyle: 'solid',
-    borderWidth: '1px',
-    borderColor: '#ededed',
-    padding: '1rem 1rem 1rem 6rem',
-    height: '6rem'
-  },
-  titleBlock: {
-    borderStyle: 'solid',
-    borderWidth: '1px',
-    borderColor: '#ededed',
-    padding: '2rem 1rem 1rem 1rem',
-    height: '6rem'
-  },
   centered: {
-    margin: 'auto'
-  },
-  centeredBadge: {
-    margin: 'auto'
+    textAlign: 'center'
   }
 }
 

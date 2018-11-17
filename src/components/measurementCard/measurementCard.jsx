@@ -7,21 +7,23 @@ import GridContainer from '../Grid/GridContainer.jsx'
 import Card from '../Card/Card.jsx'
 import CardHeader from '../Card/CardHeader.jsx'
 import CardBody from '../Card/CardBody.jsx'
+import SimpleBarChart from '../simpleBarChart/simpleBarChart.jsx'
 import CardFooter from '../Card/CardFooter.jsx'
 import RegularButton from '../CustomButtons/Button.jsx'
-import CodeBlock from '../Code/Code.jsx'
+
+import sizeMe from 'react-sizeme'
 
 import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
-class CodeCard extends React.Component {
+class MeasurementCard extends React.Component {
   static propTypes = {
-    code: PropTypes.object.isRequired
+    measurements: PropTypes.object.isRequired
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      code: this.props.code
+      measurements: this.props.measurements
     }
   }
 
@@ -29,26 +31,29 @@ class CodeCard extends React.Component {
     const { classes } = this.props
     return (
       <Card className={classes.card}>
-        <CardHeader color="primary">
+        <CardHeader color="warning">
           <GridContainer>
             <GridItem xs={6} sm={6} md={6}>
-              <h4 className={classes.cardTitleWhite}>QASM Code</h4>
+              <h4 className={classes.cardTitleWhite}>Measurements</h4>
             </GridItem>
             <GridItem xs={6} sm={6} md={6}>
-              <p className={classes.cardCategoryWhite}>Circuit Definition</p>
+              <p className={classes.cardCategoryWhite}>Emulator outputs</p>
             </GridItem>
           </GridContainer>
         </CardHeader>
         <CardBody>
-          <CodeBlock className={classes.smallBlock} title={this.state.code.name} code={this.state.code.qasm} />
+          <SimpleBarChart
+            height={this.props.size.width * 0.5}
+            width={this.props.size.width * 0.9}
+            dataSeries={this.state.measurements}
+          />
         </CardBody>
         <CardFooter>
-          <RegularButton color="primary">Upload New Code</RegularButton>
-          <RegularButton color="primary">Edit</RegularButton>
+          <RegularButton color="warning">Export</RegularButton>
         </CardFooter>
       </Card>
     )
   }
 }
 
-export default withStyles(dashboardCardStyle)(CodeCard)
+export default sizeMe()(withStyles(dashboardCardStyle)(MeasurementCard))

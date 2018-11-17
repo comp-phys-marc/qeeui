@@ -60,6 +60,8 @@ const successColor = '#4caf50'
 const infoColor = '#00acc1'
 const roseColor = '#e91e63'
 const grayColor = '#999999'
+const tealColor = '#11939a'
+const ibmBlue = '#4852a5'
 
 const primaryBoxShadow = {
   boxShadow:
@@ -186,6 +188,8 @@ export {
   infoColor,
   roseColor,
   grayColor,
+  tealColor,
+  ibmBlue,
   primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,

@@ -25,8 +25,8 @@ class ZoomableChart extends React.Component {
             animation
             xDomain={lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]}
             yDomain={lastDrawLocation && [lastDrawLocation.bottom, lastDrawLocation.top]}
-            width={500}
-            height={300}
+            width={this.props.width}
+            height={this.props.height}
           >
             <HorizontalGridLines />
 
@@ -59,7 +59,7 @@ class ZoomableChart extends React.Component {
         <DiscreteColorLegend
           orientation="horizontal"
           height={100}
-          width={300}
+          width={this.props.width}
           items={[...series.map(entry => entry.title)]}
         />
       </div>
