@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import withStyles from '@material-ui/core/styles/withStyles'
 // @material-ui/icons
 import Build from '@material-ui/icons/Build'
+import GraphicEq from '@material-ui/icons/GraphicEq'
+import DataUsage from '@material-ui/icons/DataUsage'
 // core components
 import GridItem from '../components/Grid/GridItem.jsx'
 import GridContainer from '../components/Grid/GridContainer.jsx'
@@ -46,6 +48,16 @@ class Dashboard extends React.Component {
                   path: '/dashboard',
                   sidebarName: this.state.experiment.name,
                   icon: Build
+                },
+                {
+                  path: '/dashboard',
+                  sidebarName: 'details',
+                  icon: GraphicEq
+                },
+                {
+                  path: '/result',
+                  sidebarName: 'results',
+                  icon: DataUsage
                 }
               ]}
               logoText={'EXPERIMENTS'}
