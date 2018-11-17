@@ -56,7 +56,7 @@ class Dashboard extends React.Component {
                   icon: GraphicEq
                 },
                 {
-                  path: '/result',
+                  path: '/results',
                   sidebarName: 'results',
                   icon: DataUsage
                 }
