@@ -39,6 +39,10 @@ const researchStyle = {
     fontSize: '20px',
     color: '#999'
   },
+  responsiveImage: {
+    margin: 'auto',
+    width: '100%'
+  },
   margin5: {
     margin: '5px'
   }

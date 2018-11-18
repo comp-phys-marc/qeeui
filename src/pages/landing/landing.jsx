@@ -21,6 +21,7 @@ import ProductSection from './sections/productSection.jsx'
 import ResearchSection from './sections/researchSection.jsx'
 import WorkSection from './sections/workSection.jsx'
 import ExampleSection from './sections/exampleSection.jsx'
+import TeamSection from './sections/teamSection.jsx'
 
 const landingRoutes = []
 
@@ -97,6 +98,7 @@ class LandingPage extends React.Component {
             <ProductSection />
             <ResearchSection />
             <ExampleSection isMobile={isMobile} />
+            <TeamSection />
             <WorkSection />
           </div>
         </div>

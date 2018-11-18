@@ -47,9 +47,8 @@ class ResearchSection extends React.Component {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    A novel descriptive model for quantum information systems that is an ideal input to an unsupervised
-                    AI is being developed by researchers at the Institute for Quantum Computing at the University of
-                    Waterloo.
+                    A novel descriptive model for quantum information systems that is informed by AI is being developed
+                    by researchers at the Institute for Quantum Computing at the University of Waterloo.
                   </p>
                 </CardBody>
               </Card>
