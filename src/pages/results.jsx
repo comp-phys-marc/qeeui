@@ -61,7 +61,7 @@ class Dashboard extends React.Component {
                   icon: DataUsage
                 }
               ]}
-              logoText={'RESULTS'}
+              logoText={'EXPERIMENTS'}
               logo={logo}
               image={blackboard}
               handleDrawerToggle={this.handleDrawerToggle}

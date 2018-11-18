@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 // @material-ui/core components
 import withStyles from '@material-ui/core/styles/withStyles'
 
@@ -81,7 +82,9 @@ class ExampleSection extends React.Component {
           <GridContainer>
             <GridItem xs={12} sm={12} md={12} className={classes.centered}>
               <h3 className={classes.title}>Interested in UI?</h3>
-              <RegularButton>Try a demo</RegularButton>
+              <NavLink to="/dashboard">
+                <RegularButton>Try a demo</RegularButton>
+              </NavLink>
             </GridItem>
           </GridContainer>
         </div>

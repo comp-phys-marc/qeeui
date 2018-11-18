@@ -5,7 +5,7 @@ import topology from './topologyConfig'
 import results from './resultsConfig'
 
 const experiment = {
-  name: 'TELEPORTATION',
+  name: 'DEMO',
   executions: executionData,
   code: code,
   circuit: circuit,
