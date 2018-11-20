@@ -4,6 +4,10 @@ const executions = (state = {}, action) => {
       return Object.assign({}, state, {
         selected: action.selected
       })
+    case 'CLEAR_EXECUTION_SELECTION_ACTION':
+      return Object.assign({}, state, {
+        selected: []
+      })
     default:
       return state
   }

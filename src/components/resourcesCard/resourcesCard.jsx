@@ -15,7 +15,7 @@ import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/
 
 class ResourceCard extends React.Component {
   static propTypes = {
-    resources: PropTypes.object.isRequired
+    resources: PropTypes.array.isRequired
   }
 
   constructor(props) {
@@ -40,7 +40,9 @@ class ResourceCard extends React.Component {
           </GridContainer>
         </CardHeader>
         <CardBody>
-          <NestedTreeMap dataSeries={this.state.resources} dataTitle={'Runs'} />
+          {this.state.resources.map((resources, index) => (
+            <NestedTreeMap key={index} dataSeries={resources} dataTitle={'Runs'} />
+          ))}
         </CardBody>
         <CardFooter>
           <RegularButton color="danger">Export</RegularButton>

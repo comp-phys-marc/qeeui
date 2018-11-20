@@ -40,8 +40,15 @@ class OutputCard extends React.Component {
           </GridContainer>
         </CardHeader>
         <CardBody>
-          {this.state.outputs.map(output => {
-            return <CodeBlock className={classes.smallBlock} title={`Output ${output.id}`} code={output.content} />
+          {this.state.outputs.map((output, index) => {
+            return (
+              <CodeBlock
+                key={index}
+                className={classes.smallBlock}
+                title={`Output ${output.id}`}
+                code={output.content}
+              />
+            )
           })}
         </CardBody>
         <CardFooter>

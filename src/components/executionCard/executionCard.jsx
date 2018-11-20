@@ -12,13 +12,16 @@ import RegularButton from '../CustomButtons/Button.jsx'
 import Table from '../Table/Table.jsx'
 //redux
 import { connect } from 'react-redux'
-import { selectExecution } from '../../actions/executions'
+import { selectExecution, clearExecutionSelection } from '../../actions/executions'
+// react components for routing our app without refresh
+import { Link } from 'react-router-dom'
 
 import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
 
 const mapStateToProps = state => state.executions
 const mapDispatchToProps = dispatch => ({
-  selectExecution: selected => dispatch(selectExecution(selected))
+  selectExecution: selected => dispatch(selectExecution(selected)),
+  clearExecutionSelection: () => dispatch(clearExecutionSelection())
 })
 
 class ExecutionCard extends React.Component {
@@ -26,15 +29,26 @@ class ExecutionCard extends React.Component {
     this.props.selectExecution(selected)
   }
 
+  clearExecutionSelection = () => {
+    this.props.clearExecutionSelection()
+  }
+
   static propTypes = {
-    executionData: PropTypes.object.isRequired
+    executionData: PropTypes.array.isRequired,
+    experiment: PropTypes.object.isRequired
   }
 
   constructor(props) {
     super(props)
+
     this.state = {
-      executionData: this.props.executionData
+      executionData: this.props.executionData,
+      experiment: this.props.experiment
     }
+  }
+
+  componentWillMount() {
+    this.clearExecutionSelection()
   }
 
   render() {
@@ -62,9 +76,27 @@ class ExecutionCard extends React.Component {
         </CardBody>
         <CardFooter>
           <RegularButton color="danger">New Execution</RegularButton>
-          <RegularButton color="danger" disabled={this.props.selected && this.props.selected.length > 0 ? false : true}>
-            Open
-          </RegularButton>
+          {this.props.selected &&
+            this.props.selected.length > 0 && (
+              <Link
+                to={{
+                  pathname: '/results',
+                  state: {
+                    experiment: {
+                      name: this.state.experiment.name,
+                      executions: this.props.selected.map(index => this.state.executionData[index])
+                    }
+                  }
+                }}
+              >
+                <RegularButton color="danger">Open</RegularButton>
+              </Link>
+            )}
+          {!(this.props.selected && this.props.selected.length > 0) && (
+            <RegularButton color="danger" disabled={true}>
+              Open
+            </RegularButton>
+          )}
         </CardFooter>
       </Card>
     )

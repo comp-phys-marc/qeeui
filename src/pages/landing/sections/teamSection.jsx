@@ -15,7 +15,6 @@ import teamStyle from '../../../assets/jss/material-kit-react/views/landingPageS
 
 import ghose from '../../../assets/img/shohini-ghose.png'
 import edwards from '../../../assets/img/marcus-edwards.png'
-import logos from '../../../assets/img/UW_IQC_RGB_logo.jpg'
 
 class TeamSection extends React.Component {
   render() {

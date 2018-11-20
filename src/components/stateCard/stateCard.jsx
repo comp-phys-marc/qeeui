@@ -17,7 +17,7 @@ import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/
 
 class StateCard extends React.Component {
   static propTypes = {
-    states: PropTypes.object.isRequired
+    states: PropTypes.array.isRequired
   }
 
   constructor(props) {

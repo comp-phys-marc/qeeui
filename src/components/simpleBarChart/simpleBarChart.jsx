@@ -8,8 +8,7 @@ import {
   YAxis,
   VerticalGridLines,
   HorizontalGridLines,
-  VerticalBarSeries,
-  LabelSeries
+  VerticalBarSeries
 } from 'react-vis'
 
 class SimpleBarChart extends React.Component {
@@ -33,10 +32,9 @@ class SimpleBarChart extends React.Component {
           <HorizontalGridLines />
           <XAxis />
           <YAxis />
-          {series.map(entry => (
-            <VerticalBarSeries data={entry.data} />
+          {series.map((entry, index) => (
+            <VerticalBarSeries key={index} data={entry.data} />
           ))}
-          <LabelSeries data={this.state.labelData} getLabel={d => d.x} />
         </XYPlot>
         <DiscreteColorLegend
           orientation="horizontal"

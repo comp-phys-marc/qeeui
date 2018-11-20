@@ -17,7 +17,7 @@ import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/
 
 class MeasurementCard extends React.Component {
   static propTypes = {
-    measurements: PropTypes.object.isRequired
+    measurements: PropTypes.array.isRequired
   }
 
   constructor(props) {

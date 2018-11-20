@@ -5,7 +5,7 @@ import { Treemap } from 'react-vis'
 
 class NestedTreeMap extends React.Component {
   static propTypes = {
-    dataSeries: PropTypes.array,
+    dataSeries: PropTypes.object,
     dataTitle: PropTypes.string
   }
 

@@ -32,8 +32,27 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props)
 
+    let experiment = null
+
+    if (this.props.experiment != null) {
+      experiment = this.props.experiment
+    } else if (this.props.location && this.props.location.state && this.props.location.state.experiment != null) {
+      experiment = this.props.location.state.experiment
+    } else {
+      experiment = demoExperiment
+    }
+
+    const outputs = experiment.executions.map(execution => execution.results.outputs)
+    const states = experiment.executions.map(execution => execution.results.states)
+    const resources = experiment.executions.map(execution => execution.results.resources)
+    const measurements = experiment.executions.map(execution => execution.results.measurements)
+
     this.state = {
-      experiment: this.props.experiment != null ? this.props.experiment : demoExperiment
+      experiment: experiment,
+      outputs: [].concat(...outputs),
+      states: [].concat(...states),
+      measurements: [].concat(...measurements),
+      resources: resources
     }
   }
 
@@ -72,21 +91,21 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <GridContainer className={classes.mainContainer}>
               <GridItem xs={12} sm={12} md={12}>
-                <OutputCard outputs={this.state.experiment.results.outputs} />
+                <OutputCard outputs={this.state.outputs} />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <MeasurementCard measurements={this.state.experiment.results.measurements} />
+                <MeasurementCard measurements={this.state.measurements} />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <StateCard states={this.state.experiment.results.states} />
+                <StateCard states={this.state.states} />
               </GridItem>
             </GridContainer>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <ResultsCard results={this.state.experiment.results.states} />
+                <ResultsCard results={this.state.states} />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <ResourcesCard resources={this.state.experiment.results.resources} />
+                <ResourcesCard resources={this.state.resources} />
               </GridItem>
             </GridContainer>
           </GridItem>

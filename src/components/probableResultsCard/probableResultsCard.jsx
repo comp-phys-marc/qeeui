@@ -15,7 +15,7 @@ import probableResultsCardStyle from '../../assets/jss/material-kit-react/compon
 
 class ResultsCard extends React.Component {
   static propTypes = {
-    results: PropTypes.object.isRequired
+    results: PropTypes.array.isRequired
   }
 
   constructor(props) {
@@ -42,9 +42,9 @@ class ResultsCard extends React.Component {
           </GridContainer>
         </CardHeader>
         <CardBody>
-          {this.state.results.map(result => {
+          {this.state.results.map((result, index) => {
             return (
-              <GridContainer justify="center" className={classes.paddedContainer}>
+              <GridContainer key={index} justify="center" className={classes.paddedContainer}>
                 <GridItem xs={6} sm={6} md={6} className={classes.titleBlock}>
                   <h4 className={classes.centered}>{result.name}</h4>
                 </GridItem>
