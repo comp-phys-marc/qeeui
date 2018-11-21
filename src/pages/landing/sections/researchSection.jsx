@@ -47,8 +47,9 @@ class ResearchSection extends React.Component {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    A novel descriptive model for quantum information systems that is informed by AI is being developed
-                    by researchers at the Institute for Quantum Computing at the University of Waterloo.
+                    A novel descriptive model for quantum information systems that is informed by AI quantum state
+                    inference is being built by researchers at the Institute for Quantum Computing at the University of
+                    Waterloo as the emulator is used.
                   </p>
                 </CardBody>
               </Card>
@@ -65,9 +66,9 @@ class ResearchSection extends React.Component {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    A transformation from this new quantum descriptive language to electrical hardware description
-                    languages is being developed using data and conclusions generated using the Quantum Emulation
-                    Engine.
+                    A mapping from systems described by this new AI powered quantum descriptive language to descriptions
+                    of optimized hybrid analog and digital electrical hardware implementations is being developed and
+                    continually improved.
                   </p>
                 </CardBody>
               </Card>
