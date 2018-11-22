@@ -1,6 +1,6 @@
 import { title } from '../../../material-kit-react.jsx'
 
-const exampleStyle = {
+const architectureStyle = {
   section: {
     padding: '70px 0',
     textAlign: 'center'
@@ -23,15 +23,12 @@ const exampleStyle = {
   centered: {
     textAlign: 'center'
   },
-  uiImg: {
-    width: '30vw',
-    padding: '10px',
-    display: 'inline-block',
-    marginTop: '70px'
-  },
-  spaced: {
-    marginTop: '70px'
+  archImage: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: '70px',
+    width: '100%'
   }
 }
 
-export default exampleStyle
+export default architectureStyle

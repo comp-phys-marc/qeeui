@@ -12,6 +12,9 @@ import RegularButton from '../../../components/CustomButtons/Button.jsx'
 
 import exampleStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/exampleStyle.jsx'
 
+import ui from '../../../assets/img/ui.png'
+import dash from '../../../assets/img/dash.png'
+
 import demoExperiment from '../../../config/demo/experimentConfig'
 import densityExample from './constants'
 
@@ -82,8 +85,18 @@ class ExampleSection extends React.Component {
           <GridContainer>
             <GridItem xs={12} sm={12} md={12} className={classes.centered}>
               <h3 className={classes.title}>Interested in UI?</h3>
+              <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
+                <GridContainer>
+                  <GridItem xs={12} sm={12} md={6}>
+                    <img src={ui} alt="..." className={classes.uiImg} />
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={6}>
+                    <img src={dash} alt="..." className={classes.uiImg} />
+                  </GridItem>
+                </GridContainer>
+              </GridItem>
               <NavLink to="/dashboard">
-                <RegularButton>Try a demo</RegularButton>
+                <RegularButton className={classes.spaced}>Try a demo</RegularButton>
               </NavLink>
             </GridItem>
           </GridContainer>
