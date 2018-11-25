@@ -19,6 +19,7 @@ import landingPageStyle from '../../assets/jss/material-kit-react/views/landingP
 // Sections for this page
 import ArchitectureSection from './sections/architectureSection.jsx'
 import TimelineSection from './sections/timelineSection.jsx'
+import LibrarySection from './sections/librarySection.jsx'
 
 const landingRoutes = []
 
@@ -89,6 +90,7 @@ class TechnicalPage extends React.Component {
         )}
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
+            <LibrarySection />
             <ArchitectureSection />
             <TimelineSection />
           </div>

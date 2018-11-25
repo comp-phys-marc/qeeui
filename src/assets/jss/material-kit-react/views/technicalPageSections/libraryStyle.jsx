@@ -1,6 +1,11 @@
 import { title } from '../../../material-kit-react.jsx'
+import { explanation } from '../../../common-styles.jsx'
 
-const exampleStyle = {
+const libraryStyle = {
+  explanation: {
+    ...explanation,
+    marginTop: '30px'
+  },
   section: {
     padding: '70px 0',
     textAlign: 'center'
@@ -16,22 +21,12 @@ const exampleStyle = {
   description: {
     color: '#808080'
   },
-  explanation: {
-    color: '#808080',
-    textAlign: 'left'
-  },
-  centered: {
-    textAlign: 'center'
-  },
-  uiImg: {
-    width: '100%',
-    padding: '10px',
-    display: 'inline-block',
-    marginTop: '70px'
-  },
-  spaced: {
-    marginTop: '70px'
+  libImage: {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '250px',
+    margin: '70px'
   }
 }
 
-export default exampleStyle
+export default libraryStyle
