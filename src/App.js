@@ -7,6 +7,7 @@ import Results from './pages/results'
 import Editor from './pages/editor'
 import Login from './pages/login'
 import Dashboard from './pages/dashboard'
+import Hardware from './pages/hardware/hardware'
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/editor" component={Editor} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/technical" component={Technical} />
+            <Route path="/hardware" component={Hardware} />
           </div>
         </div>
       </HashRouter>

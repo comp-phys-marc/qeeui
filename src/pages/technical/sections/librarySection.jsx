@@ -33,7 +33,7 @@ class LibrarySection extends React.Component {
               The library API is written with the intent of reflecting the experience of solving a quantum circuit in
               Dirac notation. Therefore, what a user must provide to declare a quantum state are the coefficients of its
               composite pure states ( the square root of each pure state's probability of being observed ) and the bit
-              string representing the vlaues of each qubit in that pure state.
+              string representing the values of each qubit in that pure state.
             </p>
           </GridItem>
           <GridItem xs={12} sm={7} md={7}>

@@ -39,6 +39,9 @@ function HeaderLinks({ ...props }) {
             </Link>,
             <Link to="/technical" className={classes.dropdownLink}>
               Technical
+            </Link>,
+            <Link to="/hardware" className={classes.dropdownLink}>
+              Hardware
             </Link>
           ]}
         />
