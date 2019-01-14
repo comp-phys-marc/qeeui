@@ -19,7 +19,7 @@ class TimelineSection extends React.Component {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="November 2018"
+            date="January 2018"
             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             icon={<Check />}
           >

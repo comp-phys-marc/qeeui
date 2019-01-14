@@ -17,7 +17,8 @@ const advantageStyle = {
   description: {
     color: 'white',
     textAlign: 'left',
-    marginTop: '70px'
+    marginTop: '33%',
+    marginBottom: 'auto'
   },
   explanation: {
     color: '#808080',
@@ -36,7 +37,7 @@ const advantageStyle = {
     marginTop: '70px'
   },
   image: {
-    width: '20vw',
+    width: '15vw',
     marginTop: '70px'
   }
 }
