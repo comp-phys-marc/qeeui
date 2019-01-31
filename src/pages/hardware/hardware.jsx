@@ -91,10 +91,10 @@ class HardwarePage extends React.Component {
         )}
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <video className={classes.video} controls>
+            {/* <video className={classes.video} controls>
               <source src={video} type="video/mp4" />
               Your browser does not support HTML5 video.
-            </video>
+            </video> */}
             <AdvantageSection />
           </div>
         </div>

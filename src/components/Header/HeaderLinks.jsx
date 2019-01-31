@@ -40,9 +40,9 @@ function HeaderLinks({ ...props }) {
             <Link to="/technical" className={classes.dropdownLink}>
               Technical
             </Link>,
-            // <Link to="/hardware" className={classes.dropdownLink}>
-            //   Hardware
-            // </Link>
+            <Link to="/hardware" className={classes.dropdownLink}>
+              Hardware
+            </Link>
           ]}
         />
       </ListItem>
