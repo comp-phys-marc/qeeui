@@ -60,6 +60,11 @@ class AdvantageSection extends React.Component {
       <div className={classes.section}>
         <GridContainer className={classes.spaced} justify="center">
           <GridItem xs={12} sm={12} md={8}>
+            <h1 className={classes.title}>Coming Soon...</h1>
+          </GridItem>
+        </GridContainer>
+        <GridContainer className={classes.spaced} justify="center">
+          <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Advantages</h2>
           </GridItem>
         </GridContainer>

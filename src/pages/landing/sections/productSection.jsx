@@ -34,7 +34,7 @@ class ProductSection extends React.Component {
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
-                title="High Fideility Actualization"
+                title="Accessible Actualization"
                 description="This isn't a true quantum computer so you shouldn't be limited by the obervability of intermediate states. Immediately see the steps in involved and all the intermediate states of an experiment in bra-ket notation. No one else is providing this transparency."
                 icon={Functions}
                 iconColor="warning"
@@ -53,7 +53,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Computing Resources"
-                description="The Quantum Emulation Engine is built on a high-available, scalable microservices infrastructure of simulation nodes, each capable of simulating a quantum experiment in its fullness ad providing stochastic outcomes."
+                description="The Quantum Emulation Engine is built on a high-available, scalable microservices infrastructure of simulation nodes, each capable of simulating a quantum experiment in its fullness and providing stochastic outcomes."
                 icon={CloudDone}
                 iconColor="success"
                 vertical
