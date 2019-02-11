@@ -71,9 +71,9 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Scale up to <b>2540 qubits</b> without any additional overhead or delay. All qubits are maintained and
+              Scale up to <b>2540 qubits</b> without any additional overhead or delay. All qubits maintained and
               operated simultaneously without any limiations on their interactivity, including entanglement. Quantum
-              states are maintained to within <b>1% precision</b>.
+              states maintained to within <b>1% precision</b>.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
@@ -86,8 +86,8 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Any product of Pauli operators, and all finite quantum operators belonging to the Clifford groups can be
-              applied in under <b>10 micro seconds</b>.
+              Any product of Pauli operators, and all finite quantum operators belonging to the Clifford groups applied
+              in under <b>10 micro seconds</b>.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>

@@ -19,7 +19,7 @@ class TimelineSection extends React.Component {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="January 2018"
+            date="February 2018"
             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             icon={<Check />}
           >
@@ -29,7 +29,7 @@ class TimelineSection extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="January 2019"
+            date="February 2019"
             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             icon={<Check />}
           >
@@ -39,7 +39,7 @@ class TimelineSection extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="January 2019"
+            date="February 2019"
             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             icon={<Check />}
           >
@@ -49,7 +49,7 @@ class TimelineSection extends React.Component {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="January 2019"
+            date="February 2019"
             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             icon={<Check />}
           >

@@ -26,9 +26,8 @@ class SoftwareSection extends React.Component {
             <h2 className={classes.title}>Creating The Future</h2>
             <h5 className={classes.description}>
               The future of quantum computing will be decided by the most widely accepted and community driven
-              technology. We contribute to excellent tools like{' '}
-              <a href="https://www.xanadu.ai/">Xanadu's Strawberry Fields</a>, and also create our own open source
-              software.
+              technology. We contribute to excellent software like Xanadu's Strawberry Fields, and also create our own
+              open source software.
             </h5>
           </GridItem>
         </GridContainer>
