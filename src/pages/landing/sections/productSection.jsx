@@ -1,31 +1,34 @@
-import React from 'react'
+import React from "react";
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles'
+import withStyles from "@material-ui/core/styles/withStyles";
 
 // @material-ui/icons
-import CloudDone from '@material-ui/icons/CloudDone'
-import CloudUpload from '@material-ui/icons/CloudUpload'
-import Functions from '@material-ui/icons/Functions'
-import ScatterPlot from '@material-ui/icons/ScatterPlot'
+import CloudDone from "@material-ui/icons/CloudDone";
+import CloudUpload from "@material-ui/icons/CloudUpload";
+import Functions from "@material-ui/icons/Functions";
+import ScatterPlot from "@material-ui/icons/ScatterPlot";
 // core components
-import GridContainer from '../../../components/Grid/GridContainer.jsx'
-import GridItem from '../../../components/Grid/GridItem.jsx'
-import InfoArea from '../../../components/InfoArea/InfoArea.jsx'
+import GridContainer from "../../../components/Grid/GridContainer.jsx";
+import GridItem from "../../../components/Grid/GridItem.jsx";
+import InfoArea from "../../../components/InfoArea/InfoArea.jsx";
 
-import productStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/productStyle.jsx'
+import productStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/productStyle.jsx";
 
 class ProductSection extends React.Component {
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Bridging the Gap</h2>
             <h5 className={classes.description}>
-              The goals of the Quantum Emulation Engine project are multifaceted. We aim to address the gap between
-              theoretical quantum research and the practical experimental implementation of quantum computing systems by
-              bringing the most powerful and versatile current technologies to bear... but we know that won't be enough.
+              The goals of the Quantum Emulation Engine project are
+              multifaceted. We aim to address the gap between theoretical
+              quantum research and the practical experimental implementation of
+              quantum computing systems by bringing the most powerful and
+              versatile current technologies to bear... but we know that won't
+              be enough.
             </h5>
           </GridItem>
         </GridContainer>
@@ -71,8 +74,8 @@ class ProductSection extends React.Component {
           </GridContainer>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(productStyle)(ProductSection)
+export default withStyles(productStyle)(ProductSection);

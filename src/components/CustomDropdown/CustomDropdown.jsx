@@ -34,7 +34,7 @@ class CustomDropdown extends React.Component {
   }
   handleClose(param) {
     this.setState({ open: false });
-    if(this.props && this.props.onClick){
+    if (this.props && this.props.onClick) {
       this.props.onClick(param);
     }
   }
@@ -43,7 +43,7 @@ class CustomDropdown extends React.Component {
       return;
     }
     this.setState({ open: false });
-  }
+  };
   render() {
     const { open } = this.state;
     const {
@@ -110,8 +110,12 @@ class CustomDropdown extends React.Component {
           disablePortal
           placement={
             dropup
-              ? left ? "top-start" : "top"
-              : left ? "bottom-start" : "bottom"
+              ? left
+                ? "top-start"
+                : "top"
+              : left
+                ? "bottom-start"
+                : "bottom"
           }
           className={classNames({
             [classes.popperClose]: !open,

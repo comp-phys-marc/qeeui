@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import '../../../node_modules/react-vis/dist/style.css'
+import React from "react";
+import PropTypes from "prop-types";
+import "../../../node_modules/react-vis/dist/style.css";
 import {
   DiscreteColorLegend,
   XYPlot,
@@ -9,25 +9,30 @@ import {
   VerticalGridLines,
   HorizontalGridLines,
   VerticalBarSeries
-} from 'react-vis'
+} from "react-vis";
 
 class SimpleBarChart extends React.Component {
   static propTypes = {
     dataSeries: PropTypes.array
-  }
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       series: this.props.dataSeries
-    }
+    };
   }
   render() {
-    const { series } = this.state
+    const { series } = this.state;
     return (
       <div>
-        <XYPlot xType="ordinal" width={this.props.width} height={this.props.height} xDistance={100}>
+        <XYPlot
+          xType="ordinal"
+          width={this.props.width}
+          height={this.props.height}
+          xDistance={100}
+        >
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis />
@@ -43,8 +48,8 @@ class SimpleBarChart extends React.Component {
           items={[...this.state.series.map((entry, index) => entry.title)]}
         />
       </div>
-    )
+    );
   }
 }
 
-export default SimpleBarChart
+export default SimpleBarChart;

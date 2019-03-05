@@ -1,13 +1,13 @@
 const topologyStyle = {
   dataSizeLabel: {
-    display: 'inline'
+    display: "inline"
   },
   animation: {
-    textAlign: 'center'
+    textAlign: "center"
   },
   animationLabel: {
-    margin: 'auto'
+    margin: "auto"
   }
-}
+};
 
-export default topologyStyle
+export default topologyStyle;

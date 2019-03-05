@@ -1,32 +1,44 @@
-import resourcesDataSeries from './resourcesConfig'
-import outputs from './outputConfig'
+import resourcesDataSeries from "./resourcesConfig";
+import outputs from "./outputConfig";
 
 const resultDataSeries = [
   {
-    data: [{ x: 'Sim 1', y: 1 }, { x: 'Sim 2', y: 1 }, { x: 'Sim 3', y: 1 }],
-    title: 'p(Q0 == 1)'
+    data: [{ x: "Sim 1", y: 1 }, { x: "Sim 2", y: 1 }, { x: "Sim 3", y: 1 }],
+    title: "p(Q0 == 1)"
   },
   {
-    data: [{ x: 'Sim 1', y: 0.01 }, { x: 'Sim 2', y: 0.01 }, { x: 'Sim 3', y: 0.01 }],
-    title: 'p(Q0 == 0)'
+    data: [
+      { x: "Sim 1", y: 0.01 },
+      { x: "Sim 2", y: 0.01 },
+      { x: "Sim 3", y: 0.01 }
+    ],
+    title: "p(Q0 == 0)"
   },
   {
-    data: [{ x: 'Sim 1', y: 0.01 }, { x: 'Sim 2', y: 0.01 }, { x: 'Sim 3', y: 0.01 }],
-    title: 'p(Q1 == 1)'
+    data: [
+      { x: "Sim 1", y: 0.01 },
+      { x: "Sim 2", y: 0.01 },
+      { x: "Sim 3", y: 0.01 }
+    ],
+    title: "p(Q1 == 1)"
   },
   {
-    data: [{ x: 'Sim 1', y: 1 }, { x: 'Sim 2', y: 1 }, { x: 'Sim 3', y: 1 }],
-    title: 'p(Q1 == 0)'
+    data: [{ x: "Sim 1", y: 1 }, { x: "Sim 2", y: 1 }, { x: "Sim 3", y: 1 }],
+    title: "p(Q1 == 0)"
   },
   {
-    data: [{ x: 'Sim 1', y: 0.01 }, { x: 'Sim 2', y: 0.01 }, { x: 'Sim 3', y: 0.01 }],
-    title: 'p(Q2 == 1)'
+    data: [
+      { x: "Sim 1", y: 0.01 },
+      { x: "Sim 2", y: 0.01 },
+      { x: "Sim 3", y: 0.01 }
+    ],
+    title: "p(Q2 == 1)"
   },
   {
-    data: [{ x: 'Sim 1', y: 1 }, { x: 'Sim 2', y: 1 }, { x: 'Sim 3', y: 1 }],
-    title: 'p(Q2 == 0)'
+    data: [{ x: "Sim 1", y: 1 }, { x: "Sim 2", y: 1 }, { x: "Sim 3", y: 1 }],
+    title: "p(Q2 == 0)"
   }
-]
+];
 
 const qubitDataSeries = [
   {
@@ -40,7 +52,7 @@ const qubitDataSeries = [
       { x: 6, y: 1 }
     ],
     disabled: false,
-    title: 'Qubit 0'
+    title: "Qubit 0"
   },
   {
     data: [
@@ -53,7 +65,7 @@ const qubitDataSeries = [
       { x: 6, y: 0 }
     ],
     disabled: false,
-    title: 'Qubit 1'
+    title: "Qubit 1"
   },
   {
     data: [
@@ -66,9 +78,9 @@ const qubitDataSeries = [
       { x: 6, y: 0 }
     ],
     disabled: false,
-    title: 'Qubit 2'
+    title: "Qubit 2"
   }
-]
+];
 
 const results = {
   id: 1,
@@ -76,6 +88,6 @@ const results = {
   states: qubitDataSeries,
   resources: resourcesDataSeries,
   outputs: outputs
-}
+};
 
-export default results
+export default results;

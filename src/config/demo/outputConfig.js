@@ -3,6 +3,6 @@ const outputs = [
     id: 1,
     content: `State to transmit: 0\nh (0) + 1.000|000> = + 1.000|000> + 1.000|100>\nnormalizing factor: 0.7071067811865475\n|Ψ> = + 0.707|000> + 0.707|100>\ncx (0 -> 1) + 0.707|000> = + 0.707|000>\ncx (0 -> 1) + 0.707|100> = + 0.707|110>\nnormalizing factor: 1.0000000000000002\n|Ψ> = + 0.707|000> + 0.707|110>\ncx (2 -> 0) + 0.707|000> = + 0.707|000>\ncx (2 -> 0) + 0.707|110> = + 0.707|110>\nnormalizing factor: 1.0\n|Ψ> = + 0.707|000> + 0.707|110>\nh (2) + 0.707|000> = + 0.707|000> + 0.707|001>\nh (2) + 0.707|110> = + 0.707|110> + 0.707|111>\nnormalizing factor: 0.7071067811865475\n|Ψ> = + 0.500|000> + 0.500|001> + 0.500|110> + 0.500|111>\nnormalizing factor: 1.414213562373095\n|Ψ> = + 0.707|000> + 0.707|110>\nnormalizing factor: 1.4142135623730951\n|Ψ> = + 1.000|110>\nAlice measures 0, 1\nx (1) + 1.000|110> = + 1.000|100>\nnormalizing factor: 1.0\n|Ψ> = + 1.000|100>\nState received: 0`
   }
-]
+];
 
-export default outputs
+export default outputs;

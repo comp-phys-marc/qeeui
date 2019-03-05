@@ -1,59 +1,65 @@
-import React from 'react'
+import React from "react";
 // @material-ui/core components
-import withStyles from '@material-ui/core/styles/withStyles'
+import withStyles from "@material-ui/core/styles/withStyles";
 
 // @material-ui/icons
 
 // core components
-import GridContainer from '../../../components/Grid/GridContainer.jsx'
-import GridItem from '../../../components/Grid/GridItem.jsx'
-import CustomInput from '../../../components/CustomInput/CustomInput.jsx'
-import Button from '../../../components/CustomButtons/Button.jsx'
+import GridContainer from "../../../components/Grid/GridContainer.jsx";
+import GridItem from "../../../components/Grid/GridItem.jsx";
+import CustomInput from "../../../components/CustomInput/CustomInput.jsx";
+import Button from "../../../components/CustomButtons/Button.jsx";
 
-import workStyle from '../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.jsx'
+import workStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle.jsx";
 
 class WorkSection extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      name: '',
-      content: '',
-      email: ''
-    }
+      name: "",
+      content: "",
+      email: ""
+    };
 
-    this.setEmail = this.setEmail.bind(this)
-    this.setBody = this.setBody.bind(this)
-    this.setName = this.setName.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.setEmail = this.setEmail.bind(this);
+    this.setBody = this.setBody.bind(this);
+    this.setName = this.setName.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   setEmail(event) {
-    this.setState({ email: event.target.value })
+    this.setState({ email: event.target.value });
   }
 
   setBody(event) {
-    this.setState({ content: event.target.value })
+    this.setState({ content: event.target.value });
   }
 
   setName(event) {
-    this.setState({ name: event.target.value })
+    this.setState({ name: event.target.value });
   }
 
   handleSubmit() {
-    const subject = `Hi from ${this.state.name} @ ${this.state.email}`
-    window.open(`mailto:marcus@quantumemulation.com?subject=${subject}&body=${this.state.content}`, '_blank')
+    const subject = `Hi from ${this.state.name} @ ${this.state.email}`;
+    window.open(
+      `mailto:marcus@quantumemulation.com?subject=${subject}&body=${
+        this.state.content
+      }`,
+      "_blank"
+    );
   }
 
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
     return (
       <div className={classes.section} id="work">
         <GridContainer justify="center">
           <GridItem cs={12} sm={12} md={8}>
             <h2 className={classes.title}>Access the Alpha</h2>
             <h4 className={classes.description}>
-              Interested in access to the Alpha? Let us know why you are a good candidate for a free subcription.
+              Interested in access to the Alpha? Let us know why you are a good
+              candidate for a free subcription.
             </h4>
             <form onSubmit={this.handleSubmit}>
               <GridContainer>
@@ -94,7 +100,12 @@ class WorkSection extends React.Component {
                   }}
                 />
                 <GridContainer justify="center">
-                  <GridItem xs={10} sm={10} md={10} className={classes.textCenter}>
+                  <GridItem
+                    xs={10}
+                    sm={10}
+                    md={10}
+                    className={classes.textCenter}
+                  >
                     <Button type="submit" value="Submit" color="primary">
                       Send Message
                     </Button>
@@ -105,8 +116,8 @@ class WorkSection extends React.Component {
           </GridItem>
         </GridContainer>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(workStyle)(WorkSection)
+export default withStyles(workStyle)(WorkSection);

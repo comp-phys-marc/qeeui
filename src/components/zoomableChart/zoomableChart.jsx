@@ -1,30 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import '../../../node_modules/react-vis/dist/style.css'
-import { XAxis, YAxis, HorizontalGridLines, XYPlot, LineSeries, Highlight, DiscreteColorLegend } from 'react-vis'
+import React from "react";
+import PropTypes from "prop-types";
+import "../../../node_modules/react-vis/dist/style.css";
+import {
+  XAxis,
+  YAxis,
+  HorizontalGridLines,
+  XYPlot,
+  LineSeries,
+  Highlight,
+  DiscreteColorLegend
+} from "react-vis";
 
 class ZoomableChart extends React.Component {
   static propTypes = {
     dataSeries: PropTypes.array
-  }
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       lastDrawLocation: null,
       series: this.props.dataSeries
-    }
+    };
   }
   render() {
-    const { series, lastDrawLocation } = this.state
+    const { series, lastDrawLocation } = this.state;
     return (
       <div>
         <div>
           <XYPlot
             animation
-            xDomain={lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]}
-            yDomain={lastDrawLocation && [lastDrawLocation.bottom, lastDrawLocation.top]}
+            xDomain={
+              lastDrawLocation && [
+                lastDrawLocation.left,
+                lastDrawLocation.right
+              ]
+            }
+            yDomain={
+              lastDrawLocation && [
+                lastDrawLocation.bottom,
+                lastDrawLocation.top
+              ]
+            }
             width={this.props.width}
             height={this.props.height}
           >
@@ -34,7 +52,11 @@ class ZoomableChart extends React.Component {
             <XAxis />
 
             {series.map(entry => (
-              <LineSeries key={entry.title} data={entry.data} curve={'curveMonotoneX'} />
+              <LineSeries
+                key={entry.title}
+                data={entry.data}
+                curve={"curveMonotoneX"}
+              />
             ))}
 
             <Highlight
@@ -47,13 +69,16 @@ class ZoomableChart extends React.Component {
                     right: lastDrawLocation.right - (area.right - area.left),
                     top: lastDrawLocation.top + (area.top - area.bottom)
                   }
-                })
+                });
               }}
             />
           </XYPlot>
         </div>
 
-        <button className="showcase-button" onClick={() => this.setState({ lastDrawLocation: null })}>
+        <button
+          className="showcase-button"
+          onClick={() => this.setState({ lastDrawLocation: null })}
+        >
           Reset Zoom
         </button>
         <DiscreteColorLegend
@@ -63,8 +88,8 @@ class ZoomableChart extends React.Component {
           items={[...series.map(entry => entry.title)]}
         />
       </div>
-    )
+    );
   }
 }
 
-export default ZoomableChart
+export default ZoomableChart;

@@ -1,31 +1,31 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import withStyles from '@material-ui/core/styles/withStyles'
+import React from "react";
+import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import GridItem from '../Grid/GridItem.jsx'
-import GridContainer from '../Grid/GridContainer.jsx'
-import Card from '../Card/Card.jsx'
-import CardHeader from '../Card/CardHeader.jsx'
-import CardBody from '../Card/CardBody.jsx'
-import CardFooter from '../Card/CardFooter.jsx'
-import RegularButton from '../CustomButtons/Button.jsx'
+import GridItem from "../Grid/GridItem.jsx";
+import GridContainer from "../Grid/GridContainer.jsx";
+import Card from "../Card/Card.jsx";
+import CardHeader from "../Card/CardHeader.jsx";
+import CardBody from "../Card/CardBody.jsx";
+import CardFooter from "../Card/CardFooter.jsx";
+import RegularButton from "../CustomButtons/Button.jsx";
 
-import dashboardCardStyle from '../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
+import dashboardCardStyle from "../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx";
 
 class CircuitCard extends React.Component {
   static propTypes = {
     circuit: PropTypes.string.isRequired
-  }
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       circuit: this.props.circuit
-    }
+    };
   }
 
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
     return (
       <Card className={classes.card}>
         <CardHeader color="warning">
@@ -39,14 +39,18 @@ class CircuitCard extends React.Component {
           </GridContainer>
         </CardHeader>
         <CardBody>
-          <img className={classes.responsiveImage} src={this.state.circuit} alt="circuit" />
+          <img
+            className={classes.responsiveImage}
+            src={this.state.circuit}
+            alt="circuit"
+          />
         </CardBody>
         <CardFooter>
           <RegularButton color="warning">Save</RegularButton>
         </CardFooter>
       </Card>
-    )
+    );
   }
 }
 
-export default withStyles(dashboardCardStyle)(CircuitCard)
+export default withStyles(dashboardCardStyle)(CircuitCard);

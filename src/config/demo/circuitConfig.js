@@ -1,3 +1,3 @@
-const circuit = `${window.location.origin.toString()}/yellow-circuit.png`
+const circuit = `${window.location.origin.toString()}/yellow-circuit.png`;
 
-export default circuit
+export default circuit;

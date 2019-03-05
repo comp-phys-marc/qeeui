@@ -1,42 +1,43 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 // @material-ui/core
-import withStyles from '@material-ui/core/styles/withStyles'
+import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
-import GraphicEq from '@material-ui/icons/GraphicEq'
-import ArrowRight from '@material-ui/icons/ArrowRight'
+import GraphicEq from "@material-ui/icons/GraphicEq";
+import ArrowRight from "@material-ui/icons/ArrowRight";
 // core components
-import GridItem from '../components/Grid/GridItem.jsx'
-import GridContainer from '../components/Grid/GridContainer.jsx'
-import ExecutionCard from '../components/executionCard/executionCard.jsx'
-import CircuitCard from '../components/circuitCard/circuitCard.jsx'
-import CodeCard from '../components/codeCard/codeCard.jsx'
-import Sidebar from '../components/Sidebar/Sidebar.jsx'
-import TopologyCard from '../components/topologyCard/topologyCard.jsx'
+import GridItem from "../components/Grid/GridItem.jsx";
+import GridContainer from "../components/Grid/GridContainer.jsx";
+import ExecutionCard from "../components/executionCard/executionCard.jsx";
+import CircuitCard from "../components/circuitCard/circuitCard.jsx";
+import CodeCard from "../components/codeCard/codeCard.jsx";
+import Sidebar from "../components/Sidebar/Sidebar.jsx";
+import TopologyCard from "../components/topologyCard/topologyCard.jsx";
 
-import dashboardCardStyle from '../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx'
+import dashboardCardStyle from "../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx";
 
-import logo from '../assets/img/blackboardLogo.png'
-import blackboard from '../assets/img/blackboard.jpg'
+import logo from "../assets/img/blackboardLogo.png";
+import blackboard from "../assets/img/blackboard.jpg";
 
-import demoExperiment from '../config/demo/experimentConfig'
+import demoExperiment from "../config/demo/experimentConfig";
 
 class Dashboard extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
     experiment: PropTypes.object
-  }
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      experiment: this.props.experiment != null ? this.props.experiment : demoExperiment
-    }
+      experiment:
+        this.props.experiment != null ? this.props.experiment : demoExperiment
+    };
   }
 
   render() {
-    const { classes, ...rest } = this.props
+    const { classes, ...rest } = this.props;
     return (
       <div>
         <GridContainer>
@@ -44,22 +45,22 @@ class Dashboard extends React.Component {
             <Sidebar
               routes={[
                 {
-                  path: '/dashboard',
+                  path: "/dashboard",
                   sidebarName: this.state.experiment.name,
                   icon: GraphicEq
                 },
                 {
-                  path: '/dashboard',
-                  sidebarName: 'details',
+                  path: "/dashboard",
+                  sidebarName: "details",
                   icon: ArrowRight
                 },
                 {
-                  path: '/results',
-                  sidebarName: 'results',
+                  path: "/results",
+                  sidebarName: "results",
                   icon: ArrowRight
                 }
               ]}
-              logoText={'EXPERIMENTS'}
+              logoText={"EXPERIMENTS"}
               logo={logo}
               image={blackboard}
               handleDrawerToggle={this.handleDrawerToggle}
@@ -78,7 +79,10 @@ class Dashboard extends React.Component {
             </GridContainer>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <ExecutionCard experiment={this.state.experiment} executionData={this.state.experiment.executions} />
+                <ExecutionCard
+                  experiment={this.state.experiment}
+                  executionData={this.state.experiment.executions}
+                />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <CircuitCard circuit={this.state.experiment.circuit} />
@@ -87,8 +91,8 @@ class Dashboard extends React.Component {
           </GridItem>
         </GridContainer>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(dashboardCardStyle)(Dashboard)
+export default withStyles(dashboardCardStyle)(Dashboard);

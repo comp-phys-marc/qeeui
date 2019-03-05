@@ -1,8 +1,8 @@
 export const explanation = {
-  color: '#808080',
-  textAlign: 'left'
-}
+  color: "#808080",
+  textAlign: "left"
+};
 
 export const centered = {
-  textAlign: 'center'
-}
+  textAlign: "center"
+};

@@ -7,7 +7,7 @@ initial_state = State(coeff=initial_coeff, val="000")
 
 # State ensemble
 state = States(state_array=[initial_state], num_qubits=3) 
-`
+`;
 
 export const stateOpCode = `
 # Quantum circuit operations
@@ -22,7 +22,7 @@ if m_2 == one:
     state.x(qubit=1)
 if m_1 == one:
     state.z(qubit=1)
-`
+`;
 
 export const diagnosticCode = `
 # Print matrix state representation of entire state
@@ -36,4 +36,4 @@ matrix = state.get_density_matrix(qubit=1)
 
 # Learn what resources were required to implement the experiment
 state.print_max_requirements()
-`
+`;
