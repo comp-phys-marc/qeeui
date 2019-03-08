@@ -43,10 +43,7 @@ class ExampleSection extends React.Component {
         </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
-            <Code
-              title={demoExperiment.code.name}
-              code={demoExperiment.code.qasm}
-            />
+            <Code title="Teleportation" code={demoExperiment.code} />
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
             <b className={classes.explanation}>I / O</b>
