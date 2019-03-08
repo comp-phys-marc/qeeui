@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 // @material-ui/core
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
@@ -22,17 +21,14 @@ import blackboard from "../assets/img/blackboard.jpg";
 import demoExperiment from "../config/demo/experimentConfig";
 
 class Dashboard extends React.Component {
-  static propTypes = {
-    classes: PropTypes.object.isRequired,
-    experiment: PropTypes.object
-  };
-
   constructor(props) {
     super(props);
 
     this.state = {
       experiment:
-        this.props.experiment != null ? this.props.experiment : demoExperiment
+        this.props.location.state && this.props.location.state.experiment
+          ? this.props.location.state.experiment
+          : demoExperiment
     };
   }
 
@@ -71,17 +67,32 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <GridContainer className={classes.mainContainer}>
               <GridItem xs={12} sm={12} md={6}>
-                <CodeCard code={this.state.experiment.code} />
+                <CodeCard
+                  code={{
+                    qasm: this.state.experiment.code,
+                    name: this.state.exp
+                  }}
+                />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <TopologyCard topology={this.state.experiment.topology} />
+                <TopologyCard
+                  topology={{
+                    qubits: this.state.experiment.qubits,
+                    simulators: this.state.experiment.simulators,
+                    emulators: this.state.experiment.emulators
+                  }}
+                />
               </GridItem>
             </GridContainer>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <ExecutionCard
                   experiment={this.state.experiment}
-                  executionData={this.state.experiment.executions}
+                  executionData={
+                    this.state.experiment.executions
+                      ? this.state.experiment.executions
+                      : []
+                  }
                 />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>

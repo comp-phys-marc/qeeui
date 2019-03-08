@@ -15,6 +15,7 @@ import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
 import Parallax from "../../components/Parallax/Parallax.jsx";
 
 import hardwarePageStyle from "../../assets/jss/material-kit-react/views/hardwarePage.jsx";
+import video from "../../assets/video/Marcus Edwards.mp4";
 
 // Sections for this page
 import AdvantageSection from "./sections/advantageSection.jsx";
@@ -101,10 +102,15 @@ class HardwarePage extends React.Component {
         )}
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            {/* <video className={classes.video} controls>
+            <GridContainer className={classes.spaced} justify="center">
+              <GridItem xs={12} sm={12} md={8}>
+                <h1 className={classes.title}>Coming Soon...</h1>
+              </GridItem>
+            </GridContainer>
+            <video className={classes.video} controls>
               <source src={video} type="video/mp4" />
               Your browser does not support HTML5 video.
-            </video> */}
+            </video>
             <AdvantageSection />
           </div>
         </div>

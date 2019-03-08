@@ -66,21 +66,15 @@ class AdvantageSection extends React.Component {
       <div className={classes.section}>
         <GridContainer className={classes.spaced} justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h1 className={classes.title}>Coming Soon...</h1>
-          </GridItem>
-        </GridContainer>
-        <GridContainer className={classes.spaced} justify="center">
-          <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Advantages</h2>
           </GridItem>
         </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Scale up to <b>2540 qubits</b> without any additional overhead or
-              delay. All qubits maintained and operated simultaneously without
-              any limiations on their interactivity, including entanglement.
-              Quantum states maintained to within <b>1% precision</b>.
+              Scale up qubits without any additional overhead or delay. All
+              qubits maintained and operated simultaneously without any
+              limiations on their interactivity, including entanglement.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
@@ -101,8 +95,7 @@ class AdvantageSection extends React.Component {
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
               Any product of Pauli operators, and all finite quantum operators
-              belonging to the Clifford groups applied in under{" "}
-              <b>10 micro seconds</b>.
+              belonging to the Clifford groups applied in sub-microsecond time.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>

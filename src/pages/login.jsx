@@ -1,4 +1,5 @@
 import React from "react";
+// api
 import api from "../../src/api";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -29,7 +30,9 @@ import { toast } from "react-toastify";
 import loginPageStyle from "../assets/jss/material-kit-react/views/loginPage.jsx";
 import image from "../assets/img/computers-circuit-board-and-microchips.jpg";
 
-const mapStateToProps = state => state.user;
+const mapStateToProps = state => {
+  return { user: state.user };
+};
 const mapDispatchToProps = dispatch => ({
   setUser: user => dispatch(setUser(user))
 });
@@ -48,9 +51,16 @@ class Login extends React.Component {
       companyname: ""
     };
   }
-  showError = message => toast.error(message);
   componentDidMount() {
-    // we add a hidden class to the card and after 700 ms we delete it and the transition appears
+    if (
+      window.localStorage.getItem("token") != null &&
+      window.localStorage.getItem("refresh_token") != null
+    ) {
+      this.props.history.push({
+        pathname: "/experiments",
+        state: { user: this.props.user }
+      });
+    }
     setTimeout(
       function() {
         this.setState({ cardAnimaton: "" });
@@ -58,6 +68,15 @@ class Login extends React.Component {
       700
     );
   }
+  showError = message => toast.error(message);
+  clearAuth = () => {
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("refresh_token");
+  };
+  persistAuth = (token, refresh_token) => {
+    window.localStorage.setItem("token", token);
+    window.localStorage.setItem("refresh_token", refresh_token);
+  };
   setUser = user => {
     this.props.setUser(user);
   };
@@ -100,9 +119,23 @@ class Login extends React.Component {
       })
       .then(response => {
         this.setUser(response.data.User);
+        this.persistAuth(response.data.token, response.data.refresh_token);
+        this.props.history.push({
+          pathname: "/experiments",
+          state: { user: this.props.user }
+        });
       })
       .catch(error => {
-        this.showError(error.message);
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
+          this.showError(error.response.data.message);
+        } else {
+          this.showError(error.message);
+        }
+        this.clearAuth();
       });
   };
   submitSignIn = () => {
@@ -113,13 +146,56 @@ class Login extends React.Component {
       })
       .then(response => {
         this.setUser(response.data.User);
+        this.persistAuth(response.data.token, response.data.refresh_token);
+        this.props.history.push({
+          pathname: "/experiments",
+          state: { user: this.props.user }
+        });
       })
       .catch(error => {
-        this.showError(error.message);
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
+          this.showError(error.response.data.message);
+        } else {
+          this.showError(error.message);
+        }
+        this.clearAuth();
       });
+  };
+  syncAuth = () => {
+    const token = window.localStorage.getItem("token");
+    const refresh_token = window.localStorage.getItem("refresh_token");
+
+    if (token != null && refresh_token != null) {
+      api
+        .put("/auth", {
+          token,
+          refresh_token
+        })
+        .then(response => {
+          this.setUser(response.data.User);
+          this.persistAuth(response.data.token, response.data.refresh_token);
+        })
+        .catch(error => {
+          if (
+            error.response &&
+            error.response.data &&
+            error.response.data.message
+          ) {
+            this.showError(error.response.data.message);
+          } else {
+            this.showError(error.message);
+          }
+          this.clearAuth();
+        });
+    }
   };
   render() {
     const { classes, ...rest } = this.props;
+
     return (
       <div>
         <Header

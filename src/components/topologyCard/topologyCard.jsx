@@ -42,8 +42,8 @@ class TopologyCard extends React.Component {
         <CardBody>
           <Topology
             qubits={this.state.topology.qubits}
-            bits={this.state.topology.bits}
-            signals={this.state.topology.signals}
+            simulators={this.state.topology.simulators}
+            emulators={this.state.topology.emulators}
           />
         </CardBody>
         <CardFooter>

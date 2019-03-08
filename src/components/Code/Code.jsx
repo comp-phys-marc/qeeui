@@ -25,7 +25,9 @@ class Code extends React.Component {
   }
   render() {
     const { classes } = this.props;
-    const code = this.state.code.replace(/\\n/g, "\n").replace(/;/g, ";\n");
+    const code = this.state.code
+      ? this.state.code.replace(/\\n/g, "\n").replace(/;/g, ";\n")
+      : "Create quantum assembly code to begin.";
     return (
       <div>
         <b className={classes.explanation}>{this.state.title}</b>

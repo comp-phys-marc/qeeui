@@ -13,9 +13,14 @@ import Icon from "@material-ui/core/Icon";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
+import { connect } from "react-redux";
 import Chalk from "../Typography/Chalk.jsx";
 
 import sidebarStyle from "../../assets/jss/material-dashboard-react/components/sidebarStyle.jsx";
+
+const mapStateToProps = state => {
+  return { user: state.user };
+};
 
 const Sidebar = ({ ...props }) => {
   // verifies if routeName is the one active (in browser input)
@@ -61,7 +66,10 @@ const Sidebar = ({ ...props }) => {
   );
   var brand = (
     <div className={classes.logo}>
-      <Link to="/" className={classes.logoLink}>
+      <Link
+        to={{ pathname: "/experiments", state: { user: props.user } }}
+        className={classes.logoLink}
+      >
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
@@ -125,4 +133,4 @@ Sidebar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(sidebarStyle)(Sidebar);
+export default connect(mapStateToProps)(withStyles(sidebarStyle)(Sidebar));

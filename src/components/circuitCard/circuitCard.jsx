@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridItem from "../Grid/GridItem.jsx";
@@ -13,10 +12,6 @@ import RegularButton from "../CustomButtons/Button.jsx";
 import dashboardCardStyle from "../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx";
 
 class CircuitCard extends React.Component {
-  static propTypes = {
-    circuit: PropTypes.string.isRequired
-  };
-
   constructor(props) {
     super(props);
     this.state = {
