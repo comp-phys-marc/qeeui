@@ -6,6 +6,11 @@ export const setCreating = () => ({
   type: "SET_CREATING_ACTION"
 });
 
+export const addExperiments = experiments => ({
+  type: "ADD_EXPERIMENTS_ACTION",
+  experiments
+});
+
 export const setExperiments = experiments => ({
   type: "SET_EXPERIMENTS_ACTION",
   experiments

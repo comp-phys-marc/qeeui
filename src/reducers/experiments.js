@@ -12,6 +12,12 @@ const experiments = (state = {}, action) => {
       return Object.assign({}, state, {
         all: action.experiments
       });
+    case "ADD_EXPERIMENTS_ACTION":
+      return Object.assign({}, state, {
+        all: state.all
+          ? state.all.concat(action.experiments)
+          : action.experiments
+      });
     case "SELECT_EXPERIMENT_ACTION":
       return Object.assign({}, state, {
         selected: action.selected

@@ -33,10 +33,6 @@ class ExperimentCard extends React.Component {
     this.props.selectExperiment(selected);
   };
 
-  clearExperimentSelection = () => {
-    this.props.clearExperimentSelection();
-  };
-
   constructor(props) {
     super(props);
 
@@ -46,7 +42,7 @@ class ExperimentCard extends React.Component {
   }
 
   componentWillMount() {
-    this.clearExperimentSelection();
+    this.props.clearExperimentSelection();
   }
 
   render() {
@@ -68,6 +64,7 @@ class ExperimentCard extends React.Component {
               experiment.name,
               experiment.type
             ])}
+            selectOne={true}
             selectable={true}
             onSelect={selected => this.selectExperiment(selected)}
           />

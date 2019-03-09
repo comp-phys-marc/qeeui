@@ -15,7 +15,8 @@ import CustomInput from "../../../components/CustomInput/CustomInput.jsx";
 import { connect } from "react-redux";
 import {
   selectExperiment,
-  clearExperimentSelection
+  clearExperimentSelection,
+  addExperiments
 } from "../../../actions/experiments";
 // router
 import { withRouter } from "react-router";
@@ -45,18 +46,11 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => ({
   selectExperiment: selected => dispatch(selectExperiment(selected)),
-  clearExperimentSelection: () => dispatch(clearExperimentSelection())
+  clearExperimentSelection: () => dispatch(clearExperimentSelection()),
+  addExperiments: experiments => dispatch(addExperiments(experiments))
 });
 
 class CreateExperimentCard extends React.Component {
-  selectExperiment = selected => {
-    this.props.selectExperiment(selected);
-  };
-
-  clearExperimentSelection = () => {
-    this.props.clearExperimentSelection();
-  };
-
   constructor(props) {
     super(props);
 
@@ -70,7 +64,7 @@ class CreateExperimentCard extends React.Component {
   }
   showError = message => toast.error(message);
   componentWillMount() {
-    this.clearExperimentSelection();
+    this.props.clearExperimentSelection();
   }
   updateName = event => {
     this.setState({ name: event.target.value });
@@ -148,6 +142,7 @@ class CreateExperimentCard extends React.Component {
         refresh_token
       })
       .then(response => {
+        this.props.addExperiments([response.data.experiment]);
         this.props.history.push({
           pathname: "/dashboard",
           state: { experiment: response.data.experiment }
@@ -155,7 +150,11 @@ class CreateExperimentCard extends React.Component {
       })
       .catch(error => {
         console.log(error);
-        if (error.response.data.message) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
           this.showError(error.response.data.message);
         } else {
           this.showError(error.message);

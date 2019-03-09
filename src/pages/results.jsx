@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 // @material-ui/core
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
-import GraphicEq from "@material-ui/icons/GraphicEq";
-import ArrowRight from "@material-ui/icons/ArrowRight";
+import { ArrowRightAlt, ArrowRight } from "@material-ui/icons";
 // core components
 import GridItem from "../components/Grid/GridItem.jsx";
 import GridContainer from "../components/Grid/GridContainer.jsx";
@@ -65,6 +64,27 @@ class Dashboard extends React.Component {
       measurements: [].concat(...measurements),
       resources: resources
     };
+
+    this.basicTabs = [
+      {
+        path: "/dashboard",
+        sidebarName: this.state.experiment.name,
+        icon: ArrowRight
+      },
+      {
+        path: "/dashboard",
+        sidebarName: "details",
+        icon: ArrowRightAlt
+      }
+    ];
+
+    this.resultsTab = [
+      {
+        path: "/results",
+        sidebarName: "results",
+        icon: ArrowRight
+      }
+    ];
   }
 
   render() {
@@ -78,7 +98,7 @@ class Dashboard extends React.Component {
                 {
                   path: "/dashboard",
                   sidebarName: this.state.experiment.name,
-                  icon: GraphicEq
+                  icon: ArrowRight
                 },
                 {
                   path: "/dashboard",
@@ -88,7 +108,7 @@ class Dashboard extends React.Component {
                 {
                   path: "/results",
                   sidebarName: "results",
-                  icon: ArrowRight
+                  icon: ArrowRightAlt
                 }
               ]}
               logoText={"EXPERIMENTS"}

@@ -2,8 +2,7 @@ import React from "react";
 // @material-ui/core
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
-import GraphicEq from "@material-ui/icons/GraphicEq";
-import ArrowRight from "@material-ui/icons/ArrowRight";
+import { ArrowRightAlt, ArrowRight } from "@material-ui/icons";
 // core components
 import GridItem from "../components/Grid/GridItem.jsx";
 import GridContainer from "../components/Grid/GridContainer.jsx";
@@ -30,6 +29,27 @@ class Dashboard extends React.Component {
           ? this.props.location.state.experiment
           : demoExperiment
     };
+
+    this.basicTabs = [
+      {
+        path: "/dashboard",
+        sidebarName: this.state.experiment.name,
+        icon: ArrowRight
+      },
+      {
+        path: "/dashboard",
+        sidebarName: "details",
+        icon: ArrowRightAlt
+      }
+    ];
+
+    this.resultsTab = [
+      {
+        path: "/results",
+        sidebarName: "results",
+        icon: ArrowRight
+      }
+    ];
   }
 
   render() {
@@ -39,23 +59,11 @@ class Dashboard extends React.Component {
         <GridContainer>
           <GridItem xs={false} sm={false} md={3}>
             <Sidebar
-              routes={[
-                {
-                  path: "/dashboard",
-                  sidebarName: this.state.experiment.name,
-                  icon: GraphicEq
-                },
-                {
-                  path: "/dashboard",
-                  sidebarName: "details",
-                  icon: ArrowRight
-                },
-                {
-                  path: "/results",
-                  sidebarName: "results",
-                  icon: ArrowRight
-                }
-              ]}
+              routes={
+                this.state.experiment.executions
+                  ? this.basicTabs.concat(this.resultsTab)
+                  : this.basicTabs
+              }
               logoText={"EXPERIMENTS"}
               logo={logo}
               image={blackboard}

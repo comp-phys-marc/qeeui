@@ -41,7 +41,7 @@ class CircuitCard extends React.Component {
           />
         </CardBody>
         <CardFooter>
-          <RegularButton color="warning">Save</RegularButton>
+          <RegularButton color="warning">Download</RegularButton>
         </CardFooter>
       </Card>
     );

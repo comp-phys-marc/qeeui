@@ -26,6 +26,7 @@ class CustomTable extends React.Component {
     tableHead: PropTypes.arrayOf(PropTypes.string),
     tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
     selectable: PropTypes.bool,
+    selectOne: PropTypes.bool,
     onSelect: PropTypes.func
   };
 
@@ -66,13 +67,23 @@ class CustomTable extends React.Component {
     }
   };
 
+  handleSingleClick = (event, id) => {
+    let newSelected = [id];
+    this.setState({ selected: newSelected });
+
+    if (this.onSelect !== null) {
+      this.props.onSelect(newSelected);
+    }
+  };
+
   render() {
     const {
       classes,
       tableHead,
       tableData,
       tableHeaderColor,
-      selectable
+      selectable,
+      selectOne
     } = this.props;
     return (
       <div className={classes.tableResponsive}>
@@ -106,9 +117,11 @@ class CustomTable extends React.Component {
                 <TableRow
                   hover
                   onClick={
-                    selectable
+                    selectable && !selectOne
                       ? event => this.handleClick(event, key)
-                      : () => null
+                      : selectable && selectOne
+                        ? event => this.handleSingleClick(event, key)
+                        : () => null
                   }
                   role={selectable ? "checkbox" : ""}
                   aria-checked={selectable ? isSelected : false}

@@ -86,6 +86,17 @@ const dashboardCardStyle = {
   card: {
     minHeight: "55vh",
     overflow: "visible"
+  },
+  modal: {
+    position: "absolute",
+    minWidth: "100px",
+    backgroundColor: "white",
+    boxShadow: 10,
+    padding: "4rem",
+    outline: "none",
+    top: "50vh",
+    left: "25vw",
+    borderRadius: "5px"
   }
 };
 

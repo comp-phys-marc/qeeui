@@ -77,6 +77,7 @@ class ExecutionCard extends React.Component {
               execution.speed,
               execution.time
             ])}
+            selectOne={true}
             selectable={true}
             onSelect={selected => this.selectExecution(selected)}
           />

@@ -15,6 +15,8 @@ import teamStyle from "../../../assets/jss/material-kit-react/views/landingPageS
 
 import ghose from "../../../assets/img/shohini-ghose.png";
 import edwards from "../../../assets/img/marcus-edwards.png";
+import church from "../../../assets/img/mchurch.png";
+import bacso from "../../../assets/img/sbacso.png";
 
 class TeamSection extends React.Component {
   render() {
@@ -118,6 +120,69 @@ class TeamSection extends React.Component {
                 </CardBody>
                 <GridItem xs={6} sm={6} md={6} className={classes.itemGrid}>
                   <a href="https://mackedweise.github.io/">
+                    <RegularButton>Portfolio</RegularButton>
+                  </a>
+                </GridItem>
+              </Card>
+            </GridItem>
+          </GridContainer>
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={8}>
+              <h2 className={classes.title}>Advisors</h2>
+            </GridItem>
+          </GridContainer>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <Card plain>
+                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                  <img src={church} alt="..." />
+                </GridItem>
+                <h4 className={classes.cardTitle}>
+                  Mark Church
+                  <br />
+                  <small className={classes.smallTitle}>
+                    Technical and IP Advisor
+                  </small>
+                </h4>
+                <CardBody>
+                  <p className={classes.description}>
+                    From the development of the first BlackBerry as Director of
+                    Product Development at RIM, to gaining several worldwide
+                    patents and winning a technical Oscar and Emmy, Mark Church
+                    has demonstrated incredible leadership and technical
+                    abilities.
+                  </p>
+                </CardBody>
+                <GridItem xs={6} sm={6} md={6} className={classes.itemGrid}>
+                  <a href="https://www.linkedin.com/in/mark-church-4142b97/">
+                    <RegularButton>Portfolio</RegularButton>
+                  </a>
+                </GridItem>
+              </Card>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={6}>
+              <Card plain>
+                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                  <img src={bacso} alt="..." />
+                </GridItem>
+                <h4 className={classes.cardTitle}>
+                  Stephen Bacso
+                  <br />
+                  <small className={classes.smallTitle}>
+                    Machine Learning and Industry Advisor
+                  </small>
+                </h4>
+                <CardBody>
+                  <p className={classes.description}>
+                    A successful serial technology entrepreneur with experience
+                    planting, growing and selling innovative technology
+                    businesses. Stephen Bacso has demonstrated his skills as a
+                    leader of companies that include PixStream, DelphX Capital
+                    Markets Inc. and more.
+                  </p>
+                </CardBody>
+                <GridItem xs={6} sm={6} md={6} className={classes.itemGrid}>
+                  <a href="https://www.linkedin.com/in/stephenbacso/">
                     <RegularButton>Portfolio</RegularButton>
                   </a>
                 </GridItem>
