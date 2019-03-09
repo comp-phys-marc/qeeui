@@ -38,7 +38,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Accessible Actualization"
-                description="This isn't a true quantum computer so you shouldn't be limited by the obervability of intermediate states. Immediately see the steps in involved and all the intermediate states of an experiment in bra-ket notation. No one else is providing this transparency."
+                description="This isn't a true quantum computer so you shouldn't be limited by the observability of intermediate states. Immediately see the steps in involved and all the intermediate states of an experiment in bra-ket notation. No one else is providing this transparency."
                 icon={Functions}
                 iconColor="warning"
                 vertical

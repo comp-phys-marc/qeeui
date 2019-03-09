@@ -76,7 +76,7 @@ class ExampleSection extends React.Component {
               processing task and its description in Dirac notation.
             </h5>
             <h5 className={classes.explanation}>
-              So, a graph with zoom capabilities is generated that maps out the
+              So, interactive visualizations are generated that map out the
               probabilistic state transitions between being fully 0 and fully 1
               that each qubit experienced during an emulation.
             </h5>
