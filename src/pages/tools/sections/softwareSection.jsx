@@ -34,7 +34,7 @@ class SoftwareSection extends React.Component {
         </GridContainer>
         <div>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
                   <a href="https://www.xanadu.ai/">
@@ -50,23 +50,7 @@ class SoftwareSection extends React.Component {
                 </h4>
               </Card>
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
-                  <a href="http://www.quantumdevices.ca">
-                    <img src={photonicdevice} alt="..." />
-                  </a>
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Open Photonic Hardware
-                  <br />
-                  <small className={classes.smallTitle}>
-                    Our open photonic hardware for learning quantum.
-                  </small>
-                </h4>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
                   <a href="http://www.sciapi.ca/">
@@ -82,7 +66,7 @@ class SoftwareSection extends React.Component {
                 </h4>
               </Card>
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
                   <a href="https://github.com/MackEdweise/QuantumTools">

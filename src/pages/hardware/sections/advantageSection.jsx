@@ -72,9 +72,9 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Scale up qubits without any additional overhead or delay. All
-              qubits maintained and operated simultaneously without any
-              limiations on their interactivity, including entanglement.
+              Scale up qubits on demand. All qubits maintained and operated
+              simultaneously without any limiations on their interactivity,
+              including entanglement.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
@@ -105,9 +105,8 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Analyze quantum states without disturbing them using{" "}
-              <b>superior state tomography</b> techniques made possible by
-              artificial intelligence.
+              Analyze quantum states without disturbing them using state
+              tomography techniques made possible by artificial intelligence.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>

@@ -62,7 +62,7 @@ class TeamSection extends React.Component {
                     </a>
                     , an{" "}
                     <a href="https://uwaterloo.ca/institute-for-quantum-computing/">
-                      Insitute for Quantum Computing
+                      Institute for Quantum Computing
                     </a>{" "}
                     affiliate, a Researcher at{" "}
                     <a href="https://www.perimeterinstitute.ca/">
