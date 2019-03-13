@@ -6,18 +6,29 @@ import GridContainer from "../Grid/GridContainer.jsx";
 import Card from "../Card/Card.jsx";
 import CardHeader from "../Card/CardHeader.jsx";
 import CardBody from "../Card/CardBody.jsx";
-import CardFooter from "../Card/CardFooter.jsx";
-import RegularButton from "../CustomButtons/Button.jsx";
+//quantum circuit
+import QuantumCircuit from "quantum-circuit";
+//toast
+import { toast } from "react-toastify";
 
-import dashboardCardStyle from "../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx";
+import circuitCardStyle from "../../assets/jss/material-dashboard-react/views/circuitCardStyle.jsx";
 
 class CircuitCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      circuit: this.props.circuit
+      experiment: this.props.experiment
     };
   }
+  showError = message => toast.error(message);
+  create_circuit = () => {
+    var circuit = new QuantumCircuit();
+    const errorMethod = this.showError;
+    circuit.importQASM(this.state.experiment.code, function(errors) {
+      errorMethod(errors);
+    });
+    return circuit.exportSVG(true);
+  };
 
   render() {
     const { classes } = this.props;
@@ -33,19 +44,13 @@ class CircuitCard extends React.Component {
             </GridItem>
           </GridContainer>
         </CardHeader>
-        <CardBody>
-          <img
-            className={classes.responsiveImage}
-            src={this.state.circuit}
-            alt="circuit"
-          />
-        </CardBody>
-        <CardFooter>
-          <RegularButton color="warning">Download</RegularButton>
-        </CardFooter>
+        <CardBody
+          className={classes.circuit}
+          dangerouslySetInnerHTML={{ __html: this.create_circuit() }}
+        />
       </Card>
     );
   }
 }
 
-export default withStyles(dashboardCardStyle)(CircuitCard);
+export default withStyles(circuitCardStyle)(CircuitCard);

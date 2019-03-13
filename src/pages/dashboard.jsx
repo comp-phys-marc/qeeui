@@ -91,18 +91,16 @@ class Dashboard extends React.Component {
               </GridItem>
             </GridContainer>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <ExecutionCard
-                  experiment={this.state.experiment}
-                  executionData={
-                    this.state.experiment.executions
-                      ? this.state.experiment.executions
-                      : []
-                  }
-                />
+              <GridItem xs={12} sm={12} md={12}>
+                {this.state.experiment.executions && (
+                  <ExecutionCard
+                    experiment={this.state.experiment}
+                    executionData={this.state.experiment.executions}
+                  />
+                )}
               </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-                <CircuitCard circuit={this.state.experiment.circuit} />
+              <GridItem xs={12} sm={12} md={12}>
+                <CircuitCard experiment={this.state.experiment} />
               </GridItem>
             </GridContainer>
           </GridItem>

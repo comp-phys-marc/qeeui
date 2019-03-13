@@ -125,10 +125,10 @@ class EditorCard extends React.Component {
       <Card className={classes.card}>
         <CardHeader color="primary">
           <GridContainer>
-            <GridItem xs={10} sm={8} md={6}>
+            <GridItem xs={12} sm={8} md={6}>
               <h4 className={classes.cardTitleWhite}>QASM Editor</h4>
             </GridItem>
-            <GridItem xs={6} sm={6} md={6}>
+            <GridItem xs={12} sm={6} md={6}>
               <p className={classes.cardCategoryWhite}>
                 {this.state.experiment.name}
               </p>
@@ -137,17 +137,19 @@ class EditorCard extends React.Component {
         </CardHeader>
         <CardBody>
           <GridContainer>
-            <GridItem xs={6} sm={6} md={6}>
-              <AceEditor
-                mode="python"
-                theme="solarized_dark"
-                onChange={this.onChange}
-                name="editordiv"
-                editorProps={{ $blockScrolling: true }}
-                value={this.state.experiment.code}
-              />
+            <GridItem xs={12} sm={6} md={6}>
+              <div className={classes.overflow}>
+                <AceEditor
+                  mode="python"
+                  theme="solarized_dark"
+                  onChange={this.onChange}
+                  name="editordiv"
+                  editorProps={{ $blockScrolling: true }}
+                  value={this.state.experiment.code}
+                />
+              </div>
             </GridItem>
-            <GridItem xs={6} sm={6} md={6}>
+            <GridItem xs={12} sm={6} md={6}>
               <pre className={classes.results}>{this.state.result}</pre>
             </GridItem>
           </GridContainer>

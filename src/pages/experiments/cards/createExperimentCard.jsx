@@ -202,7 +202,7 @@ class CreateExperimentCard extends React.Component {
                         />
                       </GridItem>
                       <GridItem xs={12} sm={12} md={12}>
-                        Q.E.D. 2054 Qubit Electronic Emulator
+                        Tensor Processor Emulator
                       </GridItem>
                     </GridContainer>
                   </GridItem>

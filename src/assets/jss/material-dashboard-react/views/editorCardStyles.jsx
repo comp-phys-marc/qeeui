@@ -8,7 +8,8 @@ const experimentCardStyle = {
     position: "relative",
     textAlign: "center",
     width: "95%",
-    paddingTop: "10vh"
+    paddingTop: "10vh",
+    maxWidth: "880px"
   },
   detailContainer: {
     paddingTop: "3rem",
@@ -22,9 +23,14 @@ const experimentCardStyle = {
     width: "100%",
     backgroundColor: "#0C2A35",
     height: "98%",
+    maxHeight: "490px",
     textAlign: "left",
     color: "grey",
-    padding: "1rem"
+    padding: "1rem",
+    overflow: "scroll"
+  },
+  overflow: {
+    overflow: "hidden"
   }
 };
 
