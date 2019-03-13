@@ -10,21 +10,29 @@ import CardBody from "../Card/CardBody.jsx";
 import CardFooter from "../Card/CardFooter.jsx";
 import RegularButton from "../CustomButtons/Button.jsx";
 import CodeBlock from "../Code/Code.jsx";
+// router
+import { withRouter } from "react-router";
 
 import dashboardCardStyle from "../../assets/jss/material-dashboard-react/views/dashboardCardStyle.jsx";
 
 class CodeCard extends React.Component {
   static propTypes = {
-    code: PropTypes.object.isRequired
+    experiment: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      code: this.props.code
+      experiment: this.props.experiment
     };
   }
 
+  editCode = () => {
+    this.props.history.push({
+      pathname: "/editor",
+      state: { experiment: this.state.experiment }
+    });
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -42,17 +50,18 @@ class CodeCard extends React.Component {
         <CardBody>
           <CodeBlock
             className={classes.smallBlock}
-            title={this.state.code.name}
-            code={this.state.code.qasm}
+            title={this.state.experiment.name}
+            code={this.state.experiment.code}
           />
         </CardBody>
         <CardFooter>
-          <RegularButton color="primary">Upload New Code</RegularButton>
-          <RegularButton color="primary">Edit</RegularButton>
+          <RegularButton onClick={this.editCode} color="primary">
+            Edit
+          </RegularButton>
         </CardFooter>
       </Card>
     );
   }
 }
 
-export default withStyles(dashboardCardStyle)(CodeCard);
+export default withRouter(withStyles(dashboardCardStyle)(CodeCard));

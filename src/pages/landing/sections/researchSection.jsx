@@ -45,15 +45,13 @@ class ResearchSection extends React.Component {
                   Quantum Hardware
                   <br />
                   <small className={classes.smallTitle}>
-                    Developing a description language
+                    Truly Quantum Backend Integrations
                   </small>
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    A novel descriptive model for quantum information systems
-                    that is informed by AI quantum state inference is being
-                    built by researchers at the Institute for Quantum Computing
-                    at the University of Waterloo as the emulator is used.
+                    We will integrate with cutting-edge quantum hardware
+                    backends to provide you insight into the quantum world.
                   </p>
                 </CardBody>
               </Card>
@@ -64,18 +62,16 @@ class ResearchSection extends React.Component {
                   <img src={research2} alt="..." />
                 </GridItem>
                 <h4 className={classes.cardTitle}>
-                  Acheivable Classical Emulators
+                  Classical Hardware
                   <br />
                   <small className={classes.smallTitle}>
-                    Optimizing for maximum acheivability
+                    High Performance Simulators and Emulators
                   </small>
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    A mapping from systems described by this new AI powered
-                    quantum descriptive language to descriptions of optimized
-                    hybrid analog and digital electrical hardware
-                    implementations is being developed and continually improved.
+                    We will integrate with hardware backends to provide the
+                    computational power you need to perform your experiments.
                   </p>
                 </CardBody>
               </Card>

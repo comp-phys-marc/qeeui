@@ -13,7 +13,6 @@ import softwareStyle from "../../../assets/jss/material-kit-react/views/software
 
 import xanadu from "../../../assets/img/xanadu.png";
 import github from "../../../assets/img/github.png";
-import photonicdevice from "../../../assets/img/photonic.png";
 import sciapi from "../../../assets/img/sciapi.png";
 
 class SoftwareSection extends React.Component {
@@ -36,9 +35,13 @@ class SoftwareSection extends React.Component {
           <GridContainer>
             <GridItem xs={12} sm={12} md={4}>
               <Card plain>
-                <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
+                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
                   <a href="https://www.xanadu.ai/">
-                    <img src={xanadu} alt="..." />
+                    <img
+                      className={classes.responsiveImage}
+                      src={xanadu}
+                      alt="..."
+                    />
                   </a>
                 </GridItem>
                 <h4 className={classes.cardTitle}>
@@ -52,9 +55,13 @@ class SoftwareSection extends React.Component {
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <Card plain>
-                <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
+                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
                   <a href="http://www.sciapi.ca/">
-                    <img src={sciapi} alt="..." />
+                    <img
+                      className={classes.responsiveImage}
+                      src={sciapi}
+                      alt="..."
+                    />
                   </a>
                 </GridItem>
                 <h4 className={classes.cardTitle}>
@@ -68,9 +75,13 @@ class SoftwareSection extends React.Component {
             </GridItem>
             <GridItem xs={12} sm={12} md={4}>
               <Card plain>
-                <GridItem xs={12} sm={12} md={8} className={classes.itemGrid}>
+                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
                   <a href="https://github.com/MackEdweise/QuantumTools">
-                    <img src={github} alt="..." />
+                    <img
+                      className={classes.responsiveImage}
+                      src={github}
+                      alt="..."
+                    />
                   </a>
                 </GridItem>
                 <h4 className={classes.cardTitle}>

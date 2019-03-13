@@ -64,11 +64,6 @@ class AdvantageSection extends React.Component {
 
     return (
       <div className={classes.section}>
-        <GridContainer className={classes.spaced} justify="center">
-          <GridItem xs={12} sm={12} md={8}>
-            <h2 className={classes.title}>Advantages</h2>
-          </GridItem>
-        </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
@@ -94,8 +89,8 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Any product of Pauli operators, and all finite quantum operators
-              belonging to the Clifford groups applied in sub-microsecond time.
+              Apply any product of Pauli operators, and all finite quantum
+              operators belonging to the Clifford groups.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>

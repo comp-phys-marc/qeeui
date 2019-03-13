@@ -124,10 +124,6 @@ class CreateExperimentCard extends React.Component {
   updateQubits = event => {
     this.setState({ qubits: event[0] });
   };
-  persistAuth = (token, refresh_token) => {
-    window.localStorage.setItem("token", token);
-    window.localStorage.setItem("refresh_token", refresh_token);
-  };
   submitCreateExperiment = () => {
     const { user } = this.props;
     const token = window.localStorage.getItem("token");
@@ -283,7 +279,11 @@ class CreateExperimentCard extends React.Component {
           </form>
         </CardBody>
         <CardFooter>
-          <RegularButton onClick={this.submitCreateExperiment} color="primary">
+          <RegularButton
+            disabled={this.state.type !== "python"}
+            onClick={this.submitCreateExperiment}
+            color="primary"
+          >
             Create
           </RegularButton>
         </CardFooter>

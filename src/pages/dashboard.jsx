@@ -25,7 +25,10 @@ class Dashboard extends React.Component {
 
     this.state = {
       experiment:
-        this.props.location.state && this.props.location.state.experiment
+        this.props.location &&
+        this.props.location.state &&
+        this.props.location.state &&
+        this.props.location.state.experiment
           ? this.props.location.state.experiment
           : demoExperiment
     };
@@ -75,12 +78,7 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <GridContainer className={classes.mainContainer}>
               <GridItem xs={12} sm={12} md={6}>
-                <CodeCard
-                  code={{
-                    qasm: this.state.experiment.code,
-                    name: this.state.exp
-                  }}
-                />
+                <CodeCard experiment={this.state.experiment} />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <TopologyCard

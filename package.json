@@ -27,6 +27,7 @@
     "perfect-scrollbar": "^1.4.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
+    "react-ace": "^6.4.0",
     "react-datetime": "2.15.0",
     "react-dom": "^16.5.2",
     "react-font-face": "^0.2.1",

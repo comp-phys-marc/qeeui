@@ -18,6 +18,14 @@ const experiments = (state = {}, action) => {
           ? state.all.concat(action.experiments)
           : action.experiments
       });
+    case "SAVE_EXPERIMENT_ACTION":
+      state.all.push(action.experiment);
+      if (state.all.indexOf(action.experiment) !== -1) {
+        state.all.splice(state.all.indexOf(action.experiment), 1);
+      }
+      return Object.assign({}, state, {
+        all: state.all
+      });
     case "SELECT_EXPERIMENT_ACTION":
       return Object.assign({}, state, {
         selected: action.selected

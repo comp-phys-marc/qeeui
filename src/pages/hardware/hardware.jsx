@@ -15,7 +15,6 @@ import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
 import Parallax from "../../components/Parallax/Parallax.jsx";
 
 import hardwarePageStyle from "../../assets/jss/material-kit-react/views/hardwarePage.jsx";
-import video from "../../assets/video/Marcus Edwards.mp4";
 
 // Sections for this page
 import AdvantageSection from "./sections/advantageSection.jsx";
@@ -71,11 +70,11 @@ class HardwarePage extends React.Component {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <h1 className={classes.title}>
-                    The first and only hardware of its kind.
+                    Simulations close to the metal.
                   </h1>
                   <h4>
-                    Cutting edge electrical hardware re-designed from the ground
-                    up to best emulate quantum systems.
+                    Using high-performance tensor processing units accessible
+                    through the cloud.
                   </h4>
                   <br />
                 </GridItem>
@@ -92,7 +91,7 @@ class HardwarePage extends React.Component {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <h1 className={classes.title}>
-                    The first and only hardware of its kind.
+                    Simulations close to the metal.
                   </h1>
                   <br />
                 </GridItem>
@@ -107,10 +106,6 @@ class HardwarePage extends React.Component {
                 <h1 className={classes.title}>Coming Soon...</h1>
               </GridItem>
             </GridContainer>
-            <video className={classes.video} controls>
-              <source src={video} type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
             <AdvantageSection />
           </div>
         </div>

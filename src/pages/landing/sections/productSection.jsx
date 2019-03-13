@@ -24,11 +24,10 @@ class ProductSection extends React.Component {
             <h2 className={classes.title}>Bridging the Gap</h2>
             <h5 className={classes.description}>
               The goals of the Quantum Emulation Engine project are
-              multifaceted. We aim to address the gap between theoretical
-              quantum research and the practical experimental implementation of
-              quantum computing systems by bringing the most powerful and
-              versatile current technologies to bear... but we know that won't
-              be enough.
+              multifaceted. We aim to begin to address the gap between
+              theoretical quantum research and the practical experimental
+              implementation of quantum computing emulation systems by bringing
+              the most powerful and versatile current technologies to bear.
             </h5>
           </GridItem>
         </GridContainer>

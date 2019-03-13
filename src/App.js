@@ -4,7 +4,7 @@ import api from "./api";
 import Landing from "./pages/landing/landing";
 import Technical from "./pages/technical/technical";
 import Results from "./pages/results";
-import Editor from "./pages/editor";
+import Editor from "./pages/editor/editor";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Experiments from "./pages/experiments/experiments";
