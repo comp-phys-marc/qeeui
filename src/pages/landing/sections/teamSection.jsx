@@ -126,7 +126,7 @@ class TeamSection extends React.Component {
               </Card>
             </GridItem>
           </GridContainer>
-          <GridContainer justify="center">
+          {/* <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8}>
               <h2 className={classes.title}>Advisors</h2>
             </GridItem>
@@ -188,7 +188,7 @@ class TeamSection extends React.Component {
                 </GridItem>
               </Card>
             </GridItem>
-          </GridContainer>
+          </GridContainer> */}
         </div>
       </div>
     );
