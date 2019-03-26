@@ -153,7 +153,7 @@ class CreateExperimentCard extends React.Component {
         ) {
           this.showError(error.response.data.message);
         } else {
-          this.showError(error.message);
+          console.log(error.message);
         }
       });
   };

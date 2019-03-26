@@ -12,7 +12,9 @@ const codeStyle = {
     lineHeight: "20px",
     wordBreak: "break-all",
     wordWrap: "break-word",
-    whiteSpace: "pre"
+    whiteSpace: "pre",
+    maxHeight: "300px",
+    overflow: "scroll"
   },
   explanation: {
     color: "#808080",

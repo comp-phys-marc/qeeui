@@ -78,9 +78,9 @@ class EditorCard extends React.Component {
           error.response.data &&
           error.response.data.message
         ) {
-          this.showError(error.response.data.message);
+          // this.showError(error.response.data.message);
         } else {
-          this.showError(error.message);
+          console.log(error.message);
         }
       });
   };
@@ -110,9 +110,9 @@ class EditorCard extends React.Component {
           error.response.data &&
           error.response.data.message
         ) {
-          this.showError(error.response.data.message);
+          // this.showError(error.response.data.message);
         } else {
-          this.showError(error.message);
+          console.log(error.message);
         }
       });
   };

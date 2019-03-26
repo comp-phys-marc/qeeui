@@ -126,7 +126,7 @@ class TeamSection extends React.Component {
               </Card>
             </GridItem>
           </GridContainer>
-          {/* <GridContainer justify="center">
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={8}>
               <h2 className={classes.title}>Advisors</h2>
             </GridItem>
@@ -175,7 +175,7 @@ class TeamSection extends React.Component {
                 <CardBody>
                   <p className={classes.description}>
                     A successful serial technology entrepreneur with experience
-                    planting, growing and selling innovative technology
+                    creating, growing and selling innovative technology
                     businesses. Stephen Bacso has demonstrated his skills as a
                     leader of companies that include PixStream, DelphX Capital
                     Markets Inc. and more.
@@ -188,7 +188,7 @@ class TeamSection extends React.Component {
                 </GridItem>
               </Card>
             </GridItem>
-          </GridContainer> */}
+          </GridContainer>
         </div>
       </div>
     );

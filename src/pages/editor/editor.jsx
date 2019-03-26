@@ -78,7 +78,7 @@ class Experiments extends React.Component {
           if (error.response.data.message) {
             this.showError(error.response.data.message);
           } else {
-            this.showError(error.message);
+            console.log(error.message);
           }
           if (error.response.status === 404) {
             this.setState({ ready: true });

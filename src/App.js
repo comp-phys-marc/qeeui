@@ -59,7 +59,7 @@ class App extends Component {
           ) {
             this.showError(error.response.data.message);
           } else {
-            this.showError(error.message);
+            console.log(error.message);
           }
           this.clearAuth();
           window.location.replace(

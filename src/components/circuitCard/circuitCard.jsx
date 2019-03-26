@@ -22,12 +22,16 @@ class CircuitCard extends React.Component {
   }
   showError = message => toast.error(message);
   create_circuit = () => {
-    var circuit = new QuantumCircuit();
-    const errorMethod = this.showError;
-    circuit.importQASM(this.state.experiment.code, function(errors) {
-      errorMethod(errors);
-    });
-    return circuit.exportSVG(true);
+    if (this.state.experiment.code) {
+      var circuit = new QuantumCircuit();
+      const errorMethod = this.showError;
+      circuit.importQASM(this.state.experiment.code, function(errors) {
+        errorMethod(errors);
+      });
+      return circuit.exportSVG(true);
+    } else {
+      return "<h2>No code avaiable.</h2>";
+    }
   };
 
   render() {
