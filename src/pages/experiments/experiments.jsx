@@ -76,7 +76,11 @@ class Experiments extends React.Component {
           this.setState({ ready: true });
         })
         .catch(error => {
-          if (error.response.data.message) {
+          if (
+            error.response &&
+            error.response.data &&
+            error.response.data.message
+          ) {
             this.showError(error.response.data.message);
           } else {
             console.log(error.message);

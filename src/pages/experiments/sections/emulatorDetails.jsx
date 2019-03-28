@@ -3,9 +3,8 @@ import React from "react";
 export default function EmulatorDetails() {
   return (
     <p>
-      Coming soon... Q.E.D. is integrating with high-performance emulation
-      hardware that will support the practical simulation of some quantum
-      algorithms.
+      Coming soon... Q.E.E. is building interactive edge emulators for
+      education.
     </p>
   );
 }

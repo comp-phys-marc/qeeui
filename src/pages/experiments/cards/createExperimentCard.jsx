@@ -24,13 +24,17 @@ import { withRouter } from "react-router";
 import Nouislider from "nouislider-react";
 import "nouislider/distribute/nouislider.css";
 
+import TensorFlowDetails from "../sections/tensorDetails.jsx";
 import EmulatorDetails from "../sections/emulatorDetails.jsx";
 import IbmqDetails from "../sections/ibmqDetails.jsx";
+import CirqDetails from "../sections/cirqDetails.jsx";
 import PythonDetails from "../sections/pythonDetails.jsx";
 import RustDetails from "../sections/rustDetails.jsx";
 
+import tensorType from "../../../assets/img/tensor_type.png";
 import ibmType from "../../../assets/img/ibmq_type.png";
 import emulatorType from "../../../assets/img/emulator_type.png";
+import cirqType from "../../../assets/img/cirq_type.png";
 import pythonType from "../../../assets/img/python_type.png";
 import rustType from "../../../assets/img/rust_type.png";
 
@@ -59,15 +63,30 @@ class CreateExperimentCard extends React.Component {
       type: null,
       name: "",
       qubits: 5,
-      maxQubits: 5
+      maxQubits: 5,
+      emulatorId: ""
     };
   }
   showError = message => toast.error(message);
+  validate = () => {
+    return !(
+      (this.state.type !== "python" && this.state.type !== "emulator") ||
+      (this.state.type === "python" &&
+        (this.state.name === "" || this.state.type === "")) ||
+      (this.state.type === "emulator" &&
+        (this.state.name === "" ||
+          this.state.type === "" ||
+          this.state.emulatorId === ""))
+    );
+  };
   componentWillMount() {
     this.props.clearExperimentSelection();
   }
   updateName = event => {
     this.setState({ name: event.target.value });
+  };
+  updateEmulatorId = event => {
+    this.setState({ emulatorId: event.target.value });
   };
   updateTypeIbmq = () => {
     const slider = this.refs.qubits.slider;
@@ -84,11 +103,11 @@ class CreateExperimentCard extends React.Component {
   };
   updateTypeEmulator = () => {
     const slider = this.refs.qubits.slider;
-    this.setState({ type: "emulator", maxQubits: 2054 });
+    this.setState({ type: "emulator", maxQubits: 10 });
     slider.updateOptions({
       range: {
         min: 0,
-        max: 2054
+        max: 10
       }
     });
     if (this.state.qubits > 2054) {
@@ -97,28 +116,54 @@ class CreateExperimentCard extends React.Component {
   };
   updateTypePython = () => {
     const slider = this.refs.qubits.slider;
-    this.setState({ type: "python", maxQubits: 100 });
+    this.setState({ type: "python", maxQubits: 50 });
     slider.updateOptions({
       range: {
         min: 0,
-        max: 100
+        max: 50
       }
     });
-    if (this.state.qubits > 100) {
-      this.setState({ qubits: 100 });
+    if (this.state.qubits > 50) {
+      this.setState({ qubits: 50 });
     }
   };
   updateTypeRust = () => {
     const slider = this.refs.qubits.slider;
-    this.setState({ type: "rust", maxQubits: 100 });
+    this.setState({ type: "rust", maxQubits: 50 });
     slider.updateOptions({
       range: {
         min: 0,
-        max: 100
+        max: 50
       }
     });
-    if (this.state.qubits > 100) {
-      this.setState({ qubits: 100 });
+    if (this.state.qubits > 50) {
+      this.setState({ qubits: 50 });
+    }
+  };
+  updateTypeCirq = () => {
+    const slider = this.refs.qubits.slider;
+    this.setState({ type: "cirq", maxQubits: 50 });
+    slider.updateOptions({
+      range: {
+        min: 0,
+        max: 50
+      }
+    });
+    if (this.state.qubits > 50) {
+      this.setState({ qubits: 50 });
+    }
+  };
+  updateTypeTensor = () => {
+    const slider = this.refs.qubits.slider;
+    this.setState({ type: "tensor", maxQubits: 50 });
+    slider.updateOptions({
+      range: {
+        min: 0,
+        max: 50
+      }
+    });
+    if (this.state.qubits > 50) {
+      this.setState({ qubits: 50 });
     }
   };
   updateQubits = event => {
@@ -134,6 +179,7 @@ class CreateExperimentCard extends React.Component {
         name: this.state.name,
         type: this.state.type,
         qubits: parseInt(this.state.qubits),
+        emulatorId: this.state.emulatorId,
         token,
         refresh_token
       })
@@ -173,10 +219,25 @@ class CreateExperimentCard extends React.Component {
           <form className={classes.form}>
             <h4>Select Type</h4>
             <GridContainer>
-              <GridItem xs={12} sm={6} md={6}>
+              <GridItem xs={12} sm={12} md={12}>
                 <h5>Hardware</h5>
                 <GridContainer>
-                  <GridItem xs={12} sm={6} md={6}>
+                  <GridItem xs={12} sm={4} md={4}>
+                    <GridContainer>
+                      <GridItem xs={12} sm={12} md={12}>
+                        <img
+                          className={classes.responsiveImage}
+                          src={emulatorType}
+                          alt="emulator"
+                          onClick={this.updateTypeEmulator}
+                        />
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={12}>
+                        Educational Emulator
+                      </GridItem>
+                    </GridContainer>
+                  </GridItem>
+                  <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -191,27 +252,27 @@ class CreateExperimentCard extends React.Component {
                       </GridItem>
                     </GridContainer>
                   </GridItem>
-                  <GridItem xs={12} sm={6} md={6}>
+                  <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
                           className={classes.responsiveImage}
-                          src={emulatorType}
-                          alt="emulator"
-                          onClick={this.updateTypeEmulator}
+                          src={tensorType}
+                          alt="tensor"
+                          onClick={this.updateTypeTensor}
                         />
                       </GridItem>
                       <GridItem xs={12} sm={12} md={12}>
-                        Tensor Processor Emulator
+                        TensorFlow Emulator
                       </GridItem>
                     </GridContainer>
                   </GridItem>
                 </GridContainer>
               </GridItem>
-              <GridItem xs={12} sm={6} md={6}>
+              <GridItem xs={12} sm={12} md={12}>
                 <h5>Software</h5>
                 <GridContainer>
-                  <GridItem xs={12} sm={6} md={6}>
+                  <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -222,11 +283,11 @@ class CreateExperimentCard extends React.Component {
                         />
                       </GridItem>
                       <GridItem xs={12} sm={12} md={12}>
-                        Q.E.D. Distributed Python Siumulator
+                        Python Simulator
                       </GridItem>
                     </GridContainer>
                   </GridItem>
-                  <GridItem xs={12} sm={6} md={6}>
+                  <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -237,7 +298,22 @@ class CreateExperimentCard extends React.Component {
                         />
                       </GridItem>
                       <GridItem xs={12} sm={12} md={12}>
-                        Q.E.D. Distributed Rust Simulator
+                        Rust Simulator
+                      </GridItem>
+                    </GridContainer>
+                  </GridItem>
+                  <GridItem xs={12} sm={4} md={4}>
+                    <GridContainer>
+                      <GridItem xs={12} sm={12} md={12}>
+                        <img
+                          className={classes.responsiveImage}
+                          src={cirqType}
+                          alt="cirq"
+                          onClick={this.updateTypeCirq}
+                        />
+                      </GridItem>
+                      <GridItem xs={12} sm={12} md={12}>
+                        Cirq Simulator
                       </GridItem>
                     </GridContainer>
                   </GridItem>
@@ -247,8 +323,10 @@ class CreateExperimentCard extends React.Component {
             <div className={classes.detailContainer}>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
+                  {this.state.type === "tensor" && <TensorFlowDetails />}
                   {this.state.type === "ibmq" && <IbmqDetails />}
                   {this.state.type === "emulator" && <EmulatorDetails />}
+                  {this.state.type === "cirq" && <CirqDetails />}
                   {this.state.type === "python" && <PythonDetails />}
                   {this.state.type === "rust" && <RustDetails />}
                 </GridItem>
@@ -275,12 +353,26 @@ class CreateExperimentCard extends React.Component {
                 step={1}
                 connect
               />
+              {this.state.type === "emulator" && (
+                <CustomInput
+                  labelText="Emulator ID..."
+                  id="emulator-id"
+                  formControlProps={{
+                    fullWidth: true
+                  }}
+                  inputProps={{
+                    value: this.state.emulatorId,
+                    onChange: this.updateEmulatorId,
+                    type: "text"
+                  }}
+                />
+              )}
             </div>
           </form>
         </CardBody>
         <CardFooter>
           <RegularButton
-            disabled={this.state.type !== "python"}
+            disabled={!this.validate()}
             onClick={this.submitCreateExperiment}
             color="primary"
           >

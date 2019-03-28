@@ -223,9 +223,9 @@ class Login extends React.Component {
                         className={classes.cardHeader}
                       >
                         <h4>Sign In</h4>
-                        <Button color="transparent" onClick={this.toggleForm}>
+                        {/* <Button color="transparent" onClick={this.toggleForm}>
                           Or Sign Up
-                        </Button>
+                        </Button> */}
                       </CardHeader>
                       <CardBody>
                         <CustomInput
