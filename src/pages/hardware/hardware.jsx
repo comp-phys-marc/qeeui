@@ -73,8 +73,8 @@ class HardwarePage extends React.Component {
                     Simulations close to the metal.
                   </h1>
                   <h4>
-                    Using high-performance tensor processing units accessible
-                    through the cloud.
+                    Using high-performance emulators accessible through the
+                    cloud.
                   </h4>
                   <br />
                 </GridItem>

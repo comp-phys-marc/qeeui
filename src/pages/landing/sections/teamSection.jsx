@@ -17,6 +17,7 @@ import ghose from "../../../assets/img/shohini-ghose.png";
 import edwards from "../../../assets/img/marcus-edwards.png";
 import church from "../../../assets/img/mchurch.png";
 import bacso from "../../../assets/img/sbacso.png";
+import williams from "../../../assets/img/dwilliams.png";
 
 class TeamSection extends React.Component {
   render() {
@@ -132,7 +133,7 @@ class TeamSection extends React.Component {
             </GridItem>
           </GridContainer>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={church} alt="..." />
@@ -160,7 +161,33 @@ class TeamSection extends React.Component {
                 </GridItem>
               </Card>
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={4}>
+              <Card plain>
+                <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                  <img src={williams} alt="..." />
+                </GridItem>
+                <h4 className={classes.cardTitle}>
+                  Dan Williams
+                  <br />
+                  <small className={classes.smallTitle}>Business Advisor</small>
+                </h4>
+                <CardBody>
+                  <p className={classes.description}>
+                    Dan's experience as President and CEO of Integrity Resources
+                    Inc. has allowed him to develop and demonstrate unique and
+                    valuable skills in recruiting, operations and business
+                    management. He has partnered with successful companies like
+                    Symantec and Sandvine to build highly effective teams.
+                  </p>
+                </CardBody>
+                <GridItem xs={6} sm={6} md={6} className={classes.itemGrid}>
+                  <a href="https://www.linkedin.com/in/dan-williams-29398b">
+                    <RegularButton>Portfolio</RegularButton>
+                  </a>
+                </GridItem>
+              </Card>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={bacso} alt="..." />

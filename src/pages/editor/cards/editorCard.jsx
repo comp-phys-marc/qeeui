@@ -32,15 +32,26 @@ class EditorCard extends React.Component {
   constructor(props) {
     super(props);
 
+    const experiment =
+      this.props.location &&
+      this.props.location.state &&
+      this.props.location.state &&
+      this.props.location.state.experiment
+        ? this.props.location.state.experiment
+        : demoExperiment;
+
+    let execution_type = "dirac";
+
+    if (experiment.type === "ibmq") {
+      execution_type = "ibmqx4_immediate";
+    } else if (experiment.type === "emulator") {
+      execution_type = "emulator";
+    }
+
     this.state = {
-      experiment:
-        this.props.location &&
-        this.props.location.state &&
-        this.props.location.state &&
-        this.props.location.state.experiment
-          ? this.props.location.state.experiment
-          : demoExperiment,
-      result: "Results will appear here..."
+      experiment,
+      result: "Results will appear here...",
+      executionType: execution_type
     };
     this.state.experiment.code = this.state.experiment.code
       ? this.state.experiment.code
@@ -93,6 +104,7 @@ class EditorCard extends React.Component {
         code: this.state.experiment.code,
         name: this.state.experiment.name + new Date().getDate(),
         experiment_id: this.state.experiment.id,
+        execution_type: this.state.executionType,
         token,
         refresh_token
       })
