@@ -70,13 +70,9 @@ class CreateExperimentCard extends React.Component {
   showError = message => toast.error(message);
   validate = () => {
     return !(
-      (this.state.type !== "python" && this.state.type !== "emulator") ||
+      this.state.type !== "python" ||
       (this.state.type === "python" &&
-        (this.state.name === "" || this.state.type === "")) ||
-      (this.state.type === "emulator" &&
-        (this.state.name === "" ||
-          this.state.type === "" ||
-          this.state.emulatorId === ""))
+        (this.state.name === "" || this.state.type === ""))
     );
   };
   componentWillMount() {
