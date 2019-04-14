@@ -63,6 +63,10 @@ class CustomTabs extends React.Component {
                       <prop.tabIcon />
                     )
                 };
+              } else if (prop.image) {
+                icon = {
+                  icon: <img src={prop.image} alt="rocket" />
+                };
               }
               return (
                 <Tab

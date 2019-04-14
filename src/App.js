@@ -10,6 +10,7 @@ import Dashboard from "./pages/dashboard";
 import Experiments from "./pages/experiments/experiments";
 import Hardware from "./pages/hardware/hardware";
 import Tools from "./pages/tools/tools";
+import Hlq from "./pages/hlq/hlq";
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
@@ -85,6 +86,7 @@ class App extends Component {
             <Route path="/technical" component={Technical} />
             <Route path="/hardware" component={Hardware} />
             <Route path="/tools" component={Tools} />
+            <Route path="/hlq" component={Hlq} />
             <ToastContainer />
           </div>
         </div>

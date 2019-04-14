@@ -13,7 +13,6 @@ const codeStyle = {
     wordBreak: "break-all",
     wordWrap: "break-word",
     whiteSpace: "pre",
-    maxHeight: "300px",
     overflow: "scroll"
   },
   explanation: {
