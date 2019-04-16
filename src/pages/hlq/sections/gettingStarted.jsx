@@ -45,6 +45,10 @@ export default function GettingStarted() {
         typical computer assembly languages do.
       </p>
       <p>
+        HLQ defines a composition based abstracted functional programming
+        methodology for writing cloud native hybrid quantum algorithms.
+      </p>
+      <p>
         Let's start you on your journey into cloud native quantum programming.
         The easiest way to get started using HLQ is to download the HLQ cli
         tools. Alternatively you can clone the source form{" "}
