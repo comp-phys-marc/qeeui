@@ -55,7 +55,7 @@ export default function GettingStarted() {
         <a href="#">GitHub</a>. Note that Python 3 is a requirement and must be
         installed beforehand.
       </p>
-      <GridContainer style={{ textAlign: "center", padding: "50px" }}>
+      {/* <GridContainer style={{ textAlign: "center", padding: "50px" }}>
         <GridItem xs={12} sm={4} md={4} lg={4}>
           <CloudDownload color="action" style={iconStyle} />
           <h4>Download for Mac OS</h4>
@@ -102,7 +102,7 @@ export default function GettingStarted() {
             />
           </div>
         </GridItem>
-      </GridContainer>
+      </GridContainer> */}
     </div>
   );
 }

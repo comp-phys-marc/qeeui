@@ -22,12 +22,20 @@ import ResearchSection from "./sections/researchSection.jsx";
 import WorkSection from "./sections/workSection.jsx";
 import ExampleSection from "./sections/exampleSection.jsx";
 import TeamSection from "./sections/teamSection.jsx";
+import PasswordSection from "./sections/passwordSection.jsx";
+
+//redux
+import { connect } from "react-redux";
 
 const landingRoutes = [];
 
+const mapStateToProps = state => {
+  return { passed: state.access.passed };
+};
+
 class LandingPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       width: window.innerWidth
     };
@@ -57,7 +65,7 @@ class LandingPage extends React.Component {
           color="transparent"
           routes={landingRoutes}
           brand="Quantum Emulation Engine"
-          rightLinks={<HeaderLinks />}
+          rightLinks={this.props.passed && <HeaderLinks />}
           fixed
           changeColorOnScroll={{
             height: 400,
@@ -77,7 +85,7 @@ class LandingPage extends React.Component {
                     Take quantum research to the next level.
                   </h1>
                   <h4>
-                    Harness Google's Cloud infrastructure and AI to emulate,
+                    Harness Cloud infrastructure and AI to emulate, exectue,
                     analyze and interpret quantum computing experiments.
                   </h4>
                   <br />
@@ -104,13 +112,20 @@ class LandingPage extends React.Component {
           </Parallax>
         )}
         <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-            <ProductSection />
-            <ResearchSection />
-            <ExampleSection isMobile={isMobile} />
-            <TeamSection />
-            <WorkSection />
-          </div>
+          {this.props.passed && (
+            <div className={classes.container}>
+              <ProductSection />
+              <ResearchSection />
+              <ExampleSection isMobile={isMobile} />
+              <TeamSection />
+              <WorkSection />
+            </div>
+          )}
+          {!this.props.passed && (
+            <div className={classes.container}>
+              <PasswordSection />
+            </div>
+          )}
         </div>
         <Footer />
       </div>
@@ -118,4 +133,7 @@ class LandingPage extends React.Component {
   }
 }
 
-export default withStyles(landingPageStyle)(LandingPage);
+export default connect(
+  mapStateToProps,
+  null
+)(withStyles(landingPageStyle)(LandingPage));
