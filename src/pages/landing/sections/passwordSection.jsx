@@ -41,12 +41,11 @@ class PasswordSection extends React.Component {
       <div className={classes.section}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2 className={classes.title}>Acces the Quantum Environment</h2>
+            <h2 className={classes.title}>Access the Quantum Cloud</h2>
             <GridItem xs={12} sm={12} md={12}>
               <CustomInput
                 labelText="Password"
                 id="password"
-                type="password"
                 formControlProps={{
                   fullWidth: true,
                   value: this.state.password,
