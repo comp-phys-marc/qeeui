@@ -49,7 +49,7 @@ class ExampleSection extends React.Component {
             <b className={classes.explanation}>I / O</b>
             <h5 className={classes.explanation}>
               To initiaite an emulation, an OPEN QASM script can be uplaoded.
-              The Quantum Emulation Engine will then provision the resources
+              The Quantum Experiment Engine will then provision the resources
               necessary to acheive a emulation with the requested output
               resolution.
             </h5>

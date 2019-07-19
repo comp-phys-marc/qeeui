@@ -52,7 +52,7 @@ class TopologyCard extends React.Component {
           <CardHeader color="success">
             <GridContainer>
               <GridItem xs={6} sm={6} md={6}>
-                <h4 className={classes.cardTitleWhite}>Emulation Topology</h4>
+                <h4 className={classes.cardTitleWhite}>Experiment Topology</h4>
               </GridItem>
               <GridItem xs={6} sm={6} md={6}>
                 <p className={classes.cardCategoryWhite}>Processor Types</p>

@@ -161,7 +161,7 @@ class TeamSection extends React.Component {
                 </GridItem>
               </Card>
             </GridItem>
-            {/* <GridItem xs={12} sm={12} md={4}>
+            <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
                   <img src={williams} alt="..." />
@@ -186,7 +186,7 @@ class TeamSection extends React.Component {
                   </a>
                 </GridItem>
               </Card>
-            </GridItem> */}
+            </GridItem>
             <GridItem xs={12} sm={12} md={6}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>

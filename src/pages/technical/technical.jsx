@@ -54,7 +54,7 @@ class TechnicalPage extends React.Component {
         <Header
           color="transparent"
           routes={landingRoutes}
-          brand="Quantum Emulation Engine"
+          brand="Quantum Experiment Engine"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{

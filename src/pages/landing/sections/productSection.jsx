@@ -23,7 +23,7 @@ class ProductSection extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Bridging the Gap</h2>
             <h5 className={classes.description}>
-              The goals of the Quantum Emulation Engine project are
+              The goals of the Quantum Experiment Engine project are
               multifaceted. We aim to begin to address the gap between
               theoretical quantum research and the practical experimental
               implementation of quantum computing emulation systems by bringing
@@ -55,7 +55,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Computing Resources"
-                description="The Quantum Emulation Engine is built on a high-available, scalable microservices infrastructure of simulation nodes, each capable of simulating a quantum experiment in its fullness and providing stochastic outcomes."
+                description="The Quantum Experiment Engine is built on a high-available, scalable microservices infrastructure of simulation nodes, each capable of simulating a quantum experiment in its fullness and providing stochastic outcomes."
                 icon={CloudDone}
                 iconColor="success"
                 vertical
@@ -64,7 +64,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Compatibility"
-                description="The Quantum Emulation Engine is OPEN QASM compatible. This means you can write an experiment in IBM's open-source language and uplaod it to be emulated in our powerful simulation environment."
+                description="The Quantum Experiment Engine is OPEN QASM compatible. This means you can write an experiment in IBM's open-source language and uplaod it to be emulated in our powerful simulation environment."
                 icon={CloudUpload}
                 iconColor="primary"
                 vertical

@@ -9,6 +9,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Experiments from "./pages/experiments/experiments";
 import Hardware from "./pages/hardware/hardware";
+import Documentation from "./pages/documentation/documentation";
 import Tools from "./pages/tools/tools";
 import Hlq from "./pages/hlq/hlq";
 import { ToastContainer } from "react-toastify";
@@ -85,6 +86,7 @@ class App extends Component {
             <Route path="/experiments" component={Experiments} />
             <Route path="/technical" component={Technical} />
             <Route path="/hardware" component={Hardware} />
+            <Route path="/documentation" component={Documentation} />
             <Route path="/tools" component={Tools} />
             <Route path="/hlq" component={Hlq} />
             <ToastContainer />

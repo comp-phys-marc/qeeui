@@ -200,7 +200,7 @@ class Login extends React.Component {
       <div>
         <Header
           absolute
-          brand="Quantum Emulation Engine"
+          brand="Quantum Experiment Engine"
           rightLinks={<HeaderLinks />}
           {...rest}
         />

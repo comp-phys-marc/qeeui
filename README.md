@@ -1,4 +1,4 @@
-# qed emulator frontend (JavaScript)
+# qee frontend (JavaScript)
 
 # Setup
 

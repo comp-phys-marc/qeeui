@@ -18,7 +18,7 @@ class ArchitectureSection extends React.Component {
       <div className={classes.section}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={12}>
-            <h2 className={classes.title}>Emulation Engine Architecture</h2>
+            <h2 className={classes.title}>Experiment Engine Architecture</h2>
             <img
               src={architecture}
               alt="architecture"

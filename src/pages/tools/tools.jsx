@@ -52,7 +52,7 @@ class ToolsPage extends React.Component {
         <Header
           color="white"
           routes={landingRoutes}
-          brand="Quantum Emulation Engine"
+          brand="Quantum Experiment Engine"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{

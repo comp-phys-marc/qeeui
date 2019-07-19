@@ -21,7 +21,7 @@ import ProductSection from "./sections/productSection.jsx";
 import ResearchSection from "./sections/researchSection.jsx";
 import WorkSection from "./sections/workSection.jsx";
 import ExampleSection from "./sections/exampleSection.jsx";
-import TeamSection from "./sections/teamSection.jsx";
+// import TeamSection from "./sections/teamSection.jsx";
 import PasswordSection from "./sections/passwordSection.jsx";
 
 //redux
@@ -64,7 +64,7 @@ class LandingPage extends React.Component {
         <Header
           color="transparent"
           routes={landingRoutes}
-          brand="Quantum Emulation Engine"
+          brand="Quantum Experiment Engine"
           rightLinks={this.props.passed && <HeaderLinks />}
           fixed
           changeColorOnScroll={{
@@ -117,7 +117,7 @@ class LandingPage extends React.Component {
               <ProductSection />
               <ResearchSection />
               <ExampleSection isMobile={isMobile} />
-              <TeamSection />
+              {/* <TeamSection /> */}
               <WorkSection />
             </div>
           )}
