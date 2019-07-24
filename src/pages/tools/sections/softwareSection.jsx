@@ -13,7 +13,7 @@ import softwareStyle from "../../../assets/jss/material-kit-react/views/software
 
 import xanadu from "../../../assets/img/xanadu.png";
 import github from "../../../assets/img/github.png";
-import sciapi from "../../../assets/img/sciapi.png";
+import photon from "../../../assets/img/photonic.png";
 
 class SoftwareSection extends React.Component {
   render() {
@@ -56,19 +56,19 @@ class SoftwareSection extends React.Component {
             <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
-                  <a href="http://www.sciapi.ca/">
+                  <a href="http://www.quantumdevices.ca/index.html">
                     <img
                       className={classes.responsiveImage}
-                      src={sciapi}
+                      src={photon}
                       alt="..."
                     />
                   </a>
                 </GridItem>
                 <h4 className={classes.cardTitle}>
-                  SciAPI
+                  Quantum Playground
                   <br />
                   <small className={classes.smallTitle}>
-                    An open web API for physics.
+                    An IoT Photonic Quantum Device for learning.
                   </small>
                 </h4>
               </Card>

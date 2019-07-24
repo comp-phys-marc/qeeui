@@ -24,23 +24,14 @@ function Footer({ ...props }) {
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
-        <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
-              <a href="https://mackedweise.github.io" className={classes.block}>
-                Marcus Edwards
-              </a>
-            </ListItem>
-          </List>
-        </div>
         <div className={classes.right}>
           &copy; {1900 + new Date().getYear()} by{" "}
           <a
-            href="https://www.sigmadev.ca"
+            href="http://www.marcusedwards.me/"
             className={aClasses}
             target="_blank"
           >
-            SIGMA Development
+            Marcus Edwards
           </a>{" "}
         </div>
       </div>

@@ -99,9 +99,9 @@ class TechnicalPage extends React.Component {
         )}
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <LibrarySection />
             <ArchitectureSection />
-            <TimelineSection />
+            <LibrarySection />
+            {/* <TimelineSection /> */}
           </div>
         </div>
         <Footer />
