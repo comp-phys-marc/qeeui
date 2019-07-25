@@ -23,6 +23,7 @@ import WorkSection from "./sections/workSection.jsx";
 import ExampleSection from "./sections/exampleSection.jsx";
 // import TeamSection from "./sections/teamSection.jsx";
 import PasswordSection from "./sections/passwordSection.jsx";
+import OpenSourceSection from "./sections/openSourceSection.jsx";
 
 //redux
 import { connect } from "react-redux";
@@ -116,6 +117,7 @@ class LandingPage extends React.Component {
           {this.props.passed && (
             <div className={classes.container}>
               <ProductSection />
+              <OpenSourceSection />
               <ResearchSection />
               <ExampleSection isMobile={isMobile} />
               {/* <TeamSection /> */}

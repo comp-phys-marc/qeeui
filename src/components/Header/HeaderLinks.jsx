@@ -13,7 +13,6 @@ import { Apps, CloudDownload } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.jsx";
-import Button from "../CustomButtons/Button.jsx";
 
 import headerLinksStyle from "../../assets/jss/material-kit-react/components/headerLinksStyle.jsx";
 
@@ -31,9 +30,6 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/login" className={classes.dropdownLink}>
-              Login
-            </Link>,
             <Link to="/documentation" className={classes.dropdownLink}>
               Documentation
             </Link>,
@@ -51,6 +47,9 @@ function HeaderLinks({ ...props }) {
             // </Link>,
             <Link to="/dashboard" className={classes.dropdownLink}>
               UI Demo
+            </Link>,
+            <Link to="/login" className={classes.dropdownLink}>
+              Login
             </Link>
           ]}
         />
