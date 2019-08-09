@@ -8,12 +8,16 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import GridContainer from "../../../components/Grid/GridContainer.jsx";
 import GridItem from "../../../components/Grid/GridItem.jsx";
 import Card from "../../../components/Card/Card.jsx";
+import NpmStats from "../../../components/npmStats/stats.jsx";
 
 import softwareStyle from "../../../assets/jss/material-kit-react/views/softwarePageSections/softwareStyle.jsx";
 
 import xanadu from "../../../assets/img/xanadu.png";
 import github from "../../../assets/img/github.png";
 import photon from "../../../assets/img/photonic.png";
+import sciapi from "../../../assets/img/sciapi.png";
+import qasm from "../../../assets/img/qasm.png";
+import blackbird from "../../../assets/img/xbb.png";
 
 class SoftwareSection extends React.Component {
   render() {
@@ -56,6 +60,70 @@ class SoftwareSection extends React.Component {
             <GridItem xs={12} sm={12} md={4}>
               <Card plain>
                 <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
+                  <a href="https://www.npmjs.com/package/qasm-ts">
+                    <img
+                      className={classes.responsiveImage}
+                      src={qasm}
+                      alt="..."
+                    />
+                  </a>
+                </GridItem>
+                <h4 className={classes.cardTitle}>
+                  QASM TypeScript
+                  <br />
+                  <small className={classes.smallTitle}>
+                    A TS parser for IBM's OpenQASM language.
+                  </small>
+                  <NpmStats package="qasm-ts" />
+                </h4>
+              </Card>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <Card plain>
+                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
+                  <a href="https://www.npmjs.com/package/blackbird-ts">
+                    <img
+                      className={classes.responsiveImage}
+                      src={blackbird}
+                      alt="..."
+                    />
+                  </a>
+                </GridItem>
+                <h4 className={classes.cardTitle}>
+                  BlackBird TypeScript
+                  <br />
+                  <small className={classes.smallTitle}>
+                    A TS parser for Xanadu's BlackBird language.
+                  </small>
+                  <NpmStats package="blackbird-ts" />
+                </h4>
+              </Card>
+            </GridItem>
+          </GridContainer>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={4}>
+              <Card plain>
+                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
+                  <a href="http://www.sciapi.ca">
+                    <img
+                      className={classes.responsiveImage}
+                      src={sciapi}
+                      alt="..."
+                    />
+                  </a>
+                </GridItem>
+                <h4 className={classes.cardTitle}>
+                  SciAPI
+                  <br />
+                  <small className={classes.smallTitle}>
+                    An API for embedding physics in web apps.
+                  </small>
+                </h4>
+              </Card>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <Card plain>
+                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
                   <a href="http://www.quantumdevices.ca/index.html">
                     <img
                       className={classes.responsiveImage}
@@ -68,7 +136,7 @@ class SoftwareSection extends React.Component {
                   Quantum Playground
                   <br />
                   <small className={classes.smallTitle}>
-                    An IoT Photonic Quantum Device for learning.
+                    An IoT photonic quantum device for learning.
                   </small>
                 </h4>
               </Card>
