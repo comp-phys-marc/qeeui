@@ -88,7 +88,7 @@ class ToolsPage extends React.Component {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <h1 className={classes.title}>
-                    Quantum Compuing Tools We've Developed.
+                    Quantum Computing Tools We've Developed.
                   </h1>
                   <br />
                 </GridItem>
