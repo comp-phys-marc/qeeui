@@ -43,7 +43,7 @@ class TeamSection extends React.Component {
                   </small>
                 </h4>
                 <GridItem xs={6} sm={6} md={6} className={classes.itemGrid}>
-                  <a href="https://mackedweise.github.io/">
+                  <a href="http://www.marcusedwards.me/">
                     <RegularButton>Portfolio</RegularButton>
                   </a>
                 </GridItem>
