@@ -79,7 +79,7 @@ class ResearchSection extends React.Component {
             <GridItem xs={12} sm={12} md={12}>
               <h3 className={classes.title}>Doing research of your own?</h3>
               <RegularButton onClick={scrollToBottom}>
-                Use the Emulator
+                Use the Experiment Engine
               </RegularButton>
             </GridItem>
           </GridContainer>

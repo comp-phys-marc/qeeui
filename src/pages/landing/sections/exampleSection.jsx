@@ -104,7 +104,7 @@ class ExampleSection extends React.Component {
               </GridItem>
               <NavLink to="/dashboard">
                 <RegularButton className={classes.spaced}>
-                  Try a demo
+                  Try A UI Demo
                 </RegularButton>
               </NavLink>
             </GridItem>

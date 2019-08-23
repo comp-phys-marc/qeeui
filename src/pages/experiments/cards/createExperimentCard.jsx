@@ -213,12 +213,15 @@ class CreateExperimentCard extends React.Component {
         </CardHeader>
         <CardBody>
           <form className={classes.form}>
-            <h4>Select Type</h4>
             <GridContainer>
               <GridItem xs={12} sm={12} md={12}>
-                <h5>Hardware</h5>
+                <br />
+                <h3>Hardware</h3>
+                <br />
+                <hr />
+                <br />
                 <GridContainer>
-                  <GridItem xs={12} sm={4} md={4}>
+                  {/* <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -232,8 +235,8 @@ class CreateExperimentCard extends React.Component {
                         Educational Emulator
                       </GridItem>
                     </GridContainer>
-                  </GridItem>
-                  <GridItem xs={12} sm={4} md={4}>
+                  </GridItem> */}
+                  <GridItem xs={12} sm={12} md={12}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -248,7 +251,7 @@ class CreateExperimentCard extends React.Component {
                       </GridItem>
                     </GridContainer>
                   </GridItem>
-                  <GridItem xs={12} sm={4} md={4}>
+                  {/* <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -262,13 +265,17 @@ class CreateExperimentCard extends React.Component {
                         TensorFlow Emulator
                       </GridItem>
                     </GridContainer>
-                  </GridItem>
+                  </GridItem> */}
                 </GridContainer>
               </GridItem>
               <GridItem xs={12} sm={12} md={12}>
-                <h5>Software</h5>
+                <br />
+                <h3>Software</h3>
+                <br />
+                <hr />
+                <br />
                 <GridContainer>
-                  <GridItem xs={12} sm={4} md={4}>
+                  <GridItem xs={12} sm={6} md={6}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -283,7 +290,7 @@ class CreateExperimentCard extends React.Component {
                       </GridItem>
                     </GridContainer>
                   </GridItem>
-                  <GridItem xs={12} sm={4} md={4}>
+                  <GridItem xs={12} sm={6} md={6}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -298,7 +305,7 @@ class CreateExperimentCard extends React.Component {
                       </GridItem>
                     </GridContainer>
                   </GridItem>
-                  <GridItem xs={12} sm={4} md={4}>
+                  {/* <GridItem xs={12} sm={4} md={4}>
                     <GridContainer>
                       <GridItem xs={12} sm={12} md={12}>
                         <img
@@ -312,7 +319,7 @@ class CreateExperimentCard extends React.Component {
                         Cirq Simulator
                       </GridItem>
                     </GridContainer>
-                  </GridItem>
+                  </GridItem> */}
                 </GridContainer>
               </GridItem>
             </GridContainer>
