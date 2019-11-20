@@ -21,7 +21,7 @@ import ProductSection from "./sections/productSection.jsx";
 import ResearchSection from "./sections/researchSection.jsx";
 import WorkSection from "./sections/workSection.jsx";
 import ExampleSection from "./sections/exampleSection.jsx";
-import TeamSection from "./sections/teamSection.jsx";
+// import TeamSection from "./sections/teamSection.jsx";
 import PasswordSection from "./sections/passwordSection.jsx";
 import OpenSourceSection from "./sections/openSourceSection.jsx";
 
@@ -120,7 +120,7 @@ class LandingPage extends React.Component {
               <OpenSourceSection />
               <ResearchSection />
               <ExampleSection isMobile={isMobile} />
-              <TeamSection />
+              {/* <TeamSection /> */}
               <WorkSection />
             </div>
           )}

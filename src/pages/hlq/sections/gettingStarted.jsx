@@ -48,13 +48,13 @@ export default function GettingStarted() {
         HLQ defines a composition based abstracted functional programming
         methodology for writing cloud native hybrid quantum algorithms.
       </p>
-      <p>
+      {/* <p>
         Let's start you on your journey into cloud native quantum programming.
         The easiest way to get started using HLQ is to download the HLQ cli
         tools. Alternatively you can clone the source form{" "}
         <a href="#">GitHub</a>. Note that Python 3 is a requirement and must be
         installed beforehand.
-      </p>
+      </p> */}
       {/* <GridContainer style={{ textAlign: "center", padding: "50px" }}>
         <GridItem xs={12} sm={4} md={4} lg={4}>
           <CloudDownload color="action" style={iconStyle} />
