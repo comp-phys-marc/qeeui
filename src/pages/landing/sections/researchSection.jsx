@@ -28,7 +28,7 @@ class ResearchSection extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Driving Research Forward</h2>
             <h5 className={classes.description}>
-              With help of cutting-edge tools, we will enable the advancement of
+              With help of cutting-edge tools, we aim to enable the advancement of
               our more ambitious research efforts, and provide better tools to
               the research commuity.
             </h5>
@@ -50,7 +50,7 @@ class ResearchSection extends React.Component {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    We will integrate with cutting-edge quantum hardware
+                    We integrate with third party quantum hardware
                     backends to provide you insight into the quantum world.
                   </p>
                 </CardBody>
@@ -65,13 +65,13 @@ class ResearchSection extends React.Component {
                   Classical Hardware
                   <br />
                   <small className={classes.smallTitle}>
-                    High Performance Simulators and Emulators
+                    Novel Simulators and Emulators
                   </small>
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    We will integrate with hardware backends to provide the
-                    computational power you need to perform your experiments.
+                    We provide software and hardware simulators designed
+                    to perform educational experiments.
                   </p>
                 </CardBody>
               </Card>

@@ -20,7 +20,7 @@ class OpenSourceSection extends React.Component {
           <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>Contribution and Collaboration</h2>
             <h5 className={classes.description}>
-              Anyone can request access to our codebase through{" "}
+              Anyone can access the codebase through{" "}
               <a href="https://gitlab.com/QuantumEmulator/distributedemulator">
                 GitLab
               </a>

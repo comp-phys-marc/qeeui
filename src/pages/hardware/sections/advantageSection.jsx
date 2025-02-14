@@ -70,6 +70,7 @@ class AdvantageSection extends React.Component {
               Scale up qubits on demand. All qubits maintained and operated
               simultaneously without any limiations on their interactivity,
               including entanglement.
+              <a href="https://arxiv.org/pdf/2302.00821"> Read the paper.</a>
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
@@ -89,8 +90,7 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Apply any product of Pauli operators, and all finite quantum
-              operators belonging to the Clifford groups.
+              The proposed hybrid digital/analog emulator allows you to pack more qubits into less signal.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>
@@ -100,8 +100,7 @@ class AdvantageSection extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={6} md={6}>
             <p className={classes.description}>
-              Analyze quantum states without disturbing them using state
-              tomography techniques made possible by artificial intelligence.
+              Analyze quantum states without disturbing them.
             </p>
           </GridItem>
           <GridItem xs={12} sm={6} md={6}>

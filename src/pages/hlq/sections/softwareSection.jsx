@@ -20,7 +20,7 @@ class SoftwareSection extends React.Component {
             <h2 className={classes.title}>What Is It?</h2>
             <h5 className={classes.description}>
               Unlike languages and frameworks for quantum programming being
-              developed by other companies, HLQ focuses on giving the power of
+              developed by many companies, HLQ focuses on giving the power of
               choice and control to the user. HLQ is a cloud native programming
               language, which means that it expects to be executed in a
               distributed cloud network environment. HLQ brings the various
@@ -28,6 +28,7 @@ class SoftwareSection extends React.Component {
               where a user can take advantage of each type of quantum device at
               once, and orchestrate them to achieve hybrid quantum algorithms.
             </h5>
+            <a href="https://medium.com/@marcusedwards-20301/a-high-level-quantum-templating-language-8a98d710f0b5">See the proposal.</a>
           </GridItem>
         </GridContainer>
       </div>

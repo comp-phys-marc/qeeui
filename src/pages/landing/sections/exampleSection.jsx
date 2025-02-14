@@ -48,7 +48,7 @@ class ExampleSection extends React.Component {
           <GridItem xs={12} sm={6} md={6}>
             <b className={classes.explanation}>I / O</b>
             <h5 className={classes.explanation}>
-              To initiaite an emulation, an OPEN QASM script can be uplaoded.
+              To initiaite an emulation, an OpenQASM script can be uplaoded.
               The Quantum Experiment Engine will then provision the resources
               necessary to acheive a emulation with the requested output
               resolution.
@@ -70,15 +70,14 @@ class ExampleSection extends React.Component {
           <GridItem xs={12} sm={12} md={6}>
             <b className={classes.explanation}>Exlporable data</b>
             <h5 className={classes.explanation}>
-              The output calculation goes further than alternative emulators,
+              The output calculation goes further than some alternative emulators,
               but still has many limitations. Physicists are often not
               interested only in the circuit model of a quantum information
               processing task and its description in Dirac notation.
             </h5>
             <h5 className={classes.explanation}>
-              So, interactive visualizations are generated that map out the
-              probabilistic state transitions between being fully 0 and fully 1
-              that each qubit experienced during an emulation.
+              So, we map out the entire history of each qubit's state
+              as it changes somewhere between being fully 0 and fully 1.
             </h5>
             <b className={classes.explanation}>Density matrices</b>
             <h5 className={classes.explanation}>

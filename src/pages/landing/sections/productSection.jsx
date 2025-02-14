@@ -24,10 +24,9 @@ class ProductSection extends React.Component {
             <h2 className={classes.title}>Bridging the Gap</h2>
             <h5 className={classes.description}>
               The goals of the Quantum Experiment Engine project are
-              multifaceted. We aim to begin to address the gap between
-              theoretical quantum research and the practical experimental
-              implementation of quantum computing emulation systems by bringing
-              the most powerful and versatile current technologies to bear.
+              web-centric. By providing web-first tools on top of growing
+              quantum computing capabilities, we aim to make it as easy to
+              work with and compose quantum compute resources as classical ones.
             </h5>
           </GridItem>
         </GridContainer>
@@ -37,7 +36,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Accessible Actualization"
-                description="This isn't a true quantum computer so you shouldn't be limited by the observability of intermediate states. Immediately see the steps in involved and all the intermediate states of an experiment in bra-ket notation. No one else is providing this transparency."
+                description="This isn't a true quantum computer so you shouldn't be limited by the observability of intermediate states. Immediately see the steps in involved and all the intermediate states of an experiment in bra-ket notation."
                 icon={Functions}
                 iconColor="warning"
                 vertical
@@ -46,7 +45,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Analysis and Interpretation"
-                description="Slice and dice numerical and computational results in an interactive user interface. Make use of extrapolations made from an interpretive AI to find new insights. Don't let any modern analysis tool go to waste."
+                description="Slice and dice numerical and computational results in Python or JavaScript. Make use of extrapolations to find new insights. Don't let any modern analysis tool go to waste."
                 icon={ScatterPlot}
                 iconColor="danger"
                 vertical
@@ -64,7 +63,7 @@ class ProductSection extends React.Component {
             <GridItem xs={12} sm={12} md={6}>
               <InfoArea
                 title="Compatibility"
-                description="The Quantum Experiment Engine is OPEN QASM compatible. This means you can write an experiment in IBM's open-source language and uplaod it to be emulated in our powerful simulation environment."
+                description="The Quantum Experiment Engine is OpenQASM compatible. This means you can write an experiment in IBM's open-source language and uplaod it to be emulated in a simulation environment."
                 icon={CloudUpload}
                 iconColor="primary"
                 vertical

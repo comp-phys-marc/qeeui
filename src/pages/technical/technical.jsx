@@ -73,7 +73,7 @@ class TechnicalPage extends React.Component {
                 <GridItem xs={12} sm={12} md={6}>
                   <h1 className={classes.title}>Powerful interaction.</h1>
                   <h4>
-                    Combining The best of digital, analog, AI, cloud and quantum
+                    Combining rhe best of digital, cloud and quantum
                     technologies.
                   </h4>
                   <br />

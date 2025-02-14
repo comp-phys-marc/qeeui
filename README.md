@@ -8,9 +8,12 @@
 https://gitlab.com/QuantumEmulator/qedui.git
 ```
 
-## Instal dependencies
+## Install dependencies
 
 ```
+source ~/.nvm/nvm.sh
+nvm install 11
+nvm use 11
 npm install
 ```
 

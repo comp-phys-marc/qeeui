@@ -73,8 +73,7 @@ class HardwarePage extends React.Component {
                     Simulations close to the metal.
                   </h1>
                   <h4>
-                    Using high-performance emulators accessible through the
-                    cloud.
+                    Novel analog emulation of quantum systems.
                   </h4>
                   <br />
                 </GridItem>
@@ -103,7 +102,7 @@ class HardwarePage extends React.Component {
           <div className={classes.container}>
             <GridContainer className={classes.spaced} justify="center">
               <GridItem xs={12} sm={12} md={8}>
-                <h1 className={classes.title}>Coming Soon...</h1>
+                <h1 className={classes.title}>A Hybrid Digital/Analog Quantum Physics Emulator</h1>
               </GridItem>
             </GridContainer>
             <AdvantageSection />

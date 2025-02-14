@@ -43,8 +43,7 @@ class WorkSection extends React.Component {
   handleSubmit() {
     const subject = `Hi from ${this.state.name} @ ${this.state.email}`;
     window.open(
-      `mailto:marcus@quantumemulation.com?subject=${subject}&body=${
-        this.state.content
+      `mailto:msedwards@ece.ubc.ca?subject=${subject}&body=${this.state.content
       }`,
       "_blank"
     );
@@ -56,10 +55,9 @@ class WorkSection extends React.Component {
       <div className={classes.section} id="work">
         <GridContainer justify="center">
           <GridItem cs={12} sm={12} md={8}>
-            <h2 className={classes.title}>Access the Alpha</h2>
+            <h2 className={classes.title}>Need Help Setting Up Q.E.E?</h2>
             <h4 className={classes.description}>
-              Interested in access to the Alpha? Let us know why you are a good
-              candidate for a free subcription.
+              Interested in using the platform? Let us know how we can help.
             </h4>
             <form onSubmit={this.handleSubmit}>
               <GridContainer>

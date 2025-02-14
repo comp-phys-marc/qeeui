@@ -87,7 +87,7 @@ class LandingPage extends React.Component {
                     Take quantum research to the next level.
                   </h1>
                   <h4>
-                    Harness cloud infrastructure and AI to emulate, exectue,
+                    Harness cloud infrastructure to exectue,
                     analyze and interpret quantum computing experiments.
                   </h4>
                   <br />

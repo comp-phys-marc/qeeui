@@ -100,68 +100,6 @@ class SoftwareSection extends React.Component {
               </Card>
             </GridItem>
           </GridContainer>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
-                  <a href="http://www.sciapi.ca">
-                    <img
-                      className={classes.responsiveImage}
-                      src={sciapi}
-                      alt="..."
-                    />
-                  </a>
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  SciAPI
-                  <br />
-                  <small className={classes.smallTitle}>
-                    An API for embedding physics in web apps.
-                  </small>
-                </h4>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
-                  <a href="http://www.quantumdevices.ca/index.html">
-                    <img
-                      className={classes.responsiveImage}
-                      src={photon}
-                      alt="..."
-                    />
-                  </a>
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Quantum Playground
-                  <br />
-                  <small className={classes.smallTitle}>
-                    An IoT photonic quantum device for learning.
-                  </small>
-                </h4>
-              </Card>
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-              <Card plain>
-                <GridItem xs={12} sm={12} md={12} className={classes.itemGrid}>
-                  <a href="https://github.com/MackEdweise/QuantumTools">
-                    <img
-                      className={classes.responsiveImage}
-                      src={github}
-                      alt="..."
-                    />
-                  </a>
-                </GridItem>
-                <h4 className={classes.cardTitle}>
-                  Open Quantum Tools
-                  <br />
-                  <small className={classes.smallTitle}>
-                    Handy software we have authored.
-                  </small>
-                </h4>
-              </Card>
-            </GridItem>
-          </GridContainer>
         </div>
       </div>
     );
